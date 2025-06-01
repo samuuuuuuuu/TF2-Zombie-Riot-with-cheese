@@ -1,0 +1,334 @@
+"Phrases"
+{
+  	"Infected Silvester Lastman 1"
+  	{
+    		"en"	"{gold}Silvester?{default}: Run... away..."
+    		"es"	"{gold}Silvester?{default}: Corran..."
+  	}
+  	"Infected Silvester Lastman 2"
+  	{
+    		"en"	"{gold}Silvester?{default}: P-please... help...."
+    		"es"	"{gold}Silvester?{default}: P-por favor... ayuda..."
+  	}
+  	"Infected Silvester Lastman 3"
+  	{
+    		"en"	"{gold}Silvester?{default}: AGHHRRRR!!!!"
+    		"es"	"{gold}Silvester?{default}: RRAAAHHGG!!!"
+  	}
+  	"Infected Silvester Win by Kill"
+  	{
+    		"en"	"{gold}Silvester?{default}: New... victims... to infect..."
+    		"es"	"{gold}Silvester?{default}: Mas... victimas... a infectar..."
+  	}
+  	"Infected Silvester Win by Time"
+  	{
+    		"en"	"{gold}Silvester?{default}: {green}Xeno{default} virus... t-too strong... to resist... {crimson}join...{default}"
+    		"es"	"{gold}Silvester?{default}: Virus {green}Xeno{default}... d-demasiado fuerte... para resistir... {crimson}unanse...{default}"
+  	}
+  	
+  	"Infected Silvester Defeated 1"
+  	{
+  		  "en"	"{gold}Silvester{default}: Agh... AH! Stop! Stop, please!"
+  		  "es"	"{gold}Silvester{default}: ugh... ah-AH! Esperen, paren, paren!"
+  	}
+  	"Infected Silvester Defeated 2"
+  	{
+    		"en"	"{gold}Silvester{default}: Listen to me, please! I was infected!"
+    		"es"	"{gold}Silvester{default}: Escuchenme, por favor! Estaba infectado!"
+  	}
+  	"Infected Silvester Defeated 3"
+  	{
+    		"en"	"{gold}Silvester{default}: Something {crimson}horrible {default}is happening, you were able to knock some sense into me...!"
+    		"es"	"{gold}Silvester{default}: Algo {crimson}horrible {default}esta pasando, lograron hacerme entrar en razon...!"
+  	}
+  	"Infected Silvester Defeated 4"
+  	{
+    		"en"	"{gold}Silvester{default}: I thank you for saving me, really, but i'll need help from you later, and i will warn you of dangers."
+    		"es"	"{gold}Silvester{default}: Les agradezco por salvarme, de verdad, pero necesito su ayuda, les avisare de peligros cercanos."
+  	}
+  	"Infected Silvester Defeated 5"
+  	{
+    		"en"	"{gold}Silvester{default}: Save this world, retain the chaos!"
+    		"es"	"{gold}Silvester{default}: Salven este mundo, retengan el caos!"
+  	}
+  	"Infected Silvester Defeated 6"
+  	{
+    		"en"	"{gold}Silvester{default}: You will get in touch soon with a friend of mine, I thank you, but beware of the rogue machine... {red}Blitzkrieg."
+    		"es"	"{gold}Silvester{default}: Pronto se pondran en contacto con un amigo mio, y gracias de nuevo, pero cuidado con... {red}Blitzkrieg."
+  	}
+  	"Infected Silvester Defeated 7"
+  	{
+    		"en"	"{default}You have {gold}Cured Silvester{default}, and gained his favor."
+    		"es"	"{default}Has {gold}Curado a Silvester{default}, y ganaste su favor."
+  	}
+  	"Infected Silvester Reward First Time"
+  	{
+    		"en"	"{green}You've gained a Trophy! Check the ''Unlocks'' section inside your Personal Items."
+    		"es"	"{green}Ganaste un trofeo! Revisa la seccion de ''Desbloqueos'' dentro de tus Objetos Personales."
+  	}
+  	
+  	"Chaos Kahmlstein Fight Begins"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Let's fight!"
+    		"es"	"{darkblue}Kahmlstein{default}: A pelear!"
+  	}
+  	"Chaos Kahmlstein Party"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Ahahahahahah!!! LETS GET THIS PARTY STARTED!!!!!"
+    		"es"	"{darkblue}Kahmlstein{default}: Jajajaja!!! EMPECEMOS CON ESTA FIESTA!!!!!!"
+  	}
+  	
+  	"Chaos Kahmlstein Intro 1"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I have seen enough. I knew I should've stepped in from the start. {crimson}You made a mistake of sending him out alone."
+    		"es"	"{darkblue}Kahmlstein{default}: Suficiente. Sabia que debi tomar accion desde el inicio. {crimson}Cometi el error de enviar a ese inutil solo."
+  	}
+  	"Chaos Kahmlstein Intro 2"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: You. Come closer and look me in the face... {crimson}Or are you too scared?"
+    		"es"	"{darkblue}Kahmlstein{default}: Tu. Acercate y mirame a los ojos... {crimson}O tienes miedo?"
+  	}
+  	"Chaos Kahmlstein Intro 3"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Brave against some cheap copy, but too scared of the real deal?"
+    		"es"	"{darkblue}Kahmlstein{default}: Valiente contra una copia barata, pero asustado de la version original?"
+  	}
+  	"Chaos Kahmlstein Intro 4"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: You {crimson}killed{default} my men, you {crimson}KILLED{default} MY PUP, {crimson}BUT ARE YOU TOO SCARED OF ME!?"
+    		"es"	"{darkblue}Kahmlstein{default}: {crimson}Mataron{default} a mis hombres, {crimson}MATARON{default} A MI PERRITO, {crimson}PERO ESTAN ASUSTADOS DE MI!?"
+  	}
+  	"Chaos Kahmlstein Intro 5"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I will burn everything until there's nothing but ash... And from that ash..."
+    		"es"	"{darkblue}Kahmlstein{default}: Voy a destruir y quemar todo hasta que solo queden cenizas... Y de estas..."
+  	}
+  	"Chaos Kahmlstein Intro 6"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: A brand NEW FREE WORLD will be born! A world with NO ONE TO COMMAND YOU AGAIN!!"
+    		"es"	"{darkblue}Kahmlstein{default}: Un NUEVO MUNDO LIBRE nacera! Un mundo sin NADIE QUE TE DIGA QUE HACER!!"
+  	}
+  	"Chaos Kahmlstein Intro 7"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: A WORLD DEVOID OF THESE {crimson}DAMN{default} PARASITES CALLED POLITICIANS! FREE FROM ANY FORM OF GOVERNMENT!"
+    		"es"	"{darkblue}Kahmlstein{default}: UN MUNDO SIN NADA DE ESTOS {crimson}ESTUPIDOS{default} PARASITOS LLAMADOS POLITICOS, GOBIERNOS Y PRESIDENTES!"
+  	}
+  	"Chaos Kahmlstein Intro 8"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: A WORLD FULL OF FREEDOM, A NO-RULE PARADISE!!! {crimson}SO STOP FUCKING RESISTING AND GIVE YOURSELVES IN!!"
+    		"es"	"{darkblue}Kahmlstein{default}: UN MUNDO DE LIBERTAD, UN PARAISO SIN REGLAS!!! {crimson}ASI QUE PAREN DE RESISTIR Y RINDANSE ANTE MI, MIERDA!!!!"
+  	}
+  	"Chaos Kahmlstein Intro 9"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: ...no, this new world isn't going to welcome you anyway..."
+    		"es"	"{darkblue}Kahmlstein{default}: ...no, este nuevo mundo no les dara la bienvenida siquiera..."
+  	}
+  	"Chaos Kahmlstein Intro 10"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Because you know what I hate the most, more than governments? {crimson}Violence against animals."
+    		"es"	"{darkblue}Kahmlstein{default}: Por que saben que odio mas, mas que estas reglas, estos gobiernos? {crimson}El Maltrato Animal."
+  	}
+  	"Chaos Kahmlstein Intro 11"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: You murdered these cats in cold blood. {crimson}And now I'm going to do the same with you."
+    		"es"	"{darkblue}Kahmlstein{default}: Asesinaron a esos gatos a sangre fria. {crimson}Y ahora voy a hacerles lo mismo."
+  	}
+  	"Chaos Kahmlstein Intro 12"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I will avenge you my dear companion, I will avenge everything."
+    		"es"	"{darkblue}Kahmlstein{default}: Te voy a vengar, mi querido compañero..."
+  	}
+  	"Chaos Kahmlstein Intro 13"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Let's begin."
+    		"es"	"{darkblue}Kahmlstein{default}: Empecemos."
+  	}
+  	
+  	"Chaos Kahmlstein Half Asleep"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I'm literally half asleep, let's heat things up."
+    		"es"	"{darkblue}Kahmlstein{default}: Aun tengo fatiga, vamos a calentar las cosas."
+  	}
+  	"Chaos Kahmlstein Dead Grandma"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Even my dead grandma is more entertaining than this."
+    		"es"	"{darkblue}Kahmlstein{default}: Incluso my abuelita muerta es mas entretenida que esto."
+  	}
+  	"Chaos Kahmlstein Unstoppable"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: RAAAAAAAAH! I'M UNSTOPPABLE!!!" // hi unstoppa- *dies*
+    		"es"	"{darkblue}Kahmlstein{default}: RAAAAHHH!!!!! SOY IMPARABLE!!!!!"
+  	}
+  	"Chaos Kahmlstein Ragh"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: YYAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!"
+    		"es"	"{darkblue}Kahmlstein{default}: YYYYAAAAAAAAAAAAAAAAAAHHHHHH!!!!!!!!!!"
+  	}
+  	
+  	"Chaos Kahmlstein Own Fists"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: You dare use my OWN fists against ME!? Man, {crimson}FUCK you.{default}"
+    		"es"	"{darkblue}Kahmlstein{default}: Te atreves a usar mis... mis PROPIOS puños contra MI!? {crimson}Andate a la mierda."
+  	}
+  	
+  	"Chaos Kahmlstein Normal Defeat"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: That was good, next time i'll be sure to actually try, now factor in the chance i lied."
+    		"es"	"{darkblue}Kahmlstein{default}: Eso estuvo bueno, la proxima vez voy a intentar de verdad, ahora factoreen la probabilidad de que menti."
+  	}
+  	
+  	"Chaos Kahmlstein Powerup 1"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Thanks for the tickles."
+    		"es"	"{darkblue}Kahmlstein{default}: Gracias por las cosquillas."
+  	}
+  	"Chaos Kahmlstein Powerup 2"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Oh no, im so scared."
+    		"es"	"{darkblue}Kahmlstein{default}: Oh noo, tengo miedo."
+  	}
+  	"Chaos Kahmlstein Powerup 3"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Even bugs hit harder."
+    		"es"	"{darkblue}Kahmlstein{default}: Hasta un bichito pegaria mas fuerte."
+  	}
+  	"Chaos Kahmlstein Powerup 4"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Keep running, that'll help."
+    		"es"	"{darkblue}Kahmlstein{default}: Sigan corriendo, seguro ayudara."
+  	}
+  	
+  	"Chaos Kahmlstein Enrage 1"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: You should give it 200%%."
+    		"es"	"{darkblue}Kahmlstein{default}: Deberian esforzarse un 200%% mas."
+  	}
+  	"Chaos Kahmlstein Enrage 2"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Pathetic."
+    		"es"	"{darkblue}Kahmlstein{default}: Patetico."
+  	}
+  	"Chaos Kahmlstein Enrage 3"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Such idiots."
+    		"es"	"{darkblue}Kahmlstein{default}: Idiotas."
+  	}
+  	"Chaos Kahmlstein Enrage 4"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: All your cruelty, worse than states."
+    		"es"	"{darkblue}Kahmlstein{default}: Toda tu crueldad, peor que cualquier cosa."
+  	}
+  	
+  	"Chaos Kahmlstein Win 1"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: You are no more."
+    		"es"	"{darkblue}Kahmlstein{default}: Acabados."
+  	}
+  	"Chaos Kahmlstein Win 2"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Everything burns."
+    		"es"	"{darkblue}Kahmlstein{default}: Que arda Irln."
+  	}
+  	"Chaos Kahmlstein Win 3"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Chaos shall reign."
+    		"es"	"{darkblue}Kahmlstein{default}: El Caos reinara."
+  	}
+  	
+  	"Chaos Kahmlstein Lastman 1"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I am going to break {crimson}every single bone{default} in your body."
+    		"es"	"{darkblue}Kahmlstein{default}: Voy a romper {crimson}todos tus huesos{default} uno por uno."
+  	}
+  	"Chaos Kahmlstein Lastman 2"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: You're all alone against Chaos now."
+    		"es"	"{darkblue}Kahmlstein{default}: Ahora estas solo contra el Caos."
+  	}
+  	"Chaos Kahmlstein Lastman 3"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I will drag you face down to the bottoms of the Deep Sea."
+    		"es"	"{darkblue}Kahmlstein{default}: Voy a arrastrarte hasta el fondo del Oceano Profundo."
+  	}
+  	"Chaos Kahmlstein Lastman 4"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Blitzkrieg was weak, that's why it failed, {crimson}and you soon are to follow its path."
+    		"es"	"{darkblue}Kahmlstein{default}: Blitzkrieg era debil, por eso fallo, {crimson}y ahora van a seguir su camino."
+  	}
+  	
+  	"Chaos Kahmlstein Defeated 1"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Ugh... my head..."
+    		"es"	"{darkblue}Kahmlstein{default}: Agh... mi cabeza..."
+  	}
+  	"Chaos Kahmlstein Defeated 2"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I feel... like a great weight was lifted off my shoulders."
+    		"es"	"{darkblue}Kahmlstein{default}: Siento... siento como si me hubieran quitado un gran peso de encima."
+  	}
+  	"Chaos Kahmlstein Defeated 3"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: The Chaos... it has completely left my body, it seems."
+    		"es"	"{darkblue}Kahmlstein{default}: El Caos... abandono mi cuerpo totalmente, parece."
+  	}
+  	"Chaos Kahmlstein Defeated 4"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: But the knowledge and the memories of everything I did, didn't."
+    		"es"	"{darkblue}Kahmlstein{default}: Pero el conocimiento y las memorias de todo lo que hice, no..."
+  	}
+  	"Chaos Kahmlstein Defeated 5"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I can't turn back time now though, what's done is done."
+    		"es"	"{darkblue}Kahmlstein{default}: Bueno, no puedo volver en el tiempo, lo hecho hecho esta."
+  	}
+  	"Chaos Kahmlstein Defeated 6"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I made an awful mistake by trying to research what Chaos is."
+    		"es"	"{darkblue}Kahmlstein{default}: Cometi el error de intentar investigar lo que el Caos es."
+  	}
+  	"Chaos Kahmlstein Defeated 7"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: The more i indulged into it, the more of a batshit insane specimen i turned into."
+    		"es"	"{darkblue}Kahmlstein{default}: Entre mas me someti a este, mas me convertia en una bestia demente."
+  	}
+  	"Chaos Kahmlstein Defeated 8"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Heh, {yellow}curiosity killed the cat, as they say...{default}"
+    		"es"	"{darkblue}Kahmlstein{default}: jeje... {yellow}la curiosidad mato al gato, como dicen...{default}"
+  	}
+  	"Chaos Kahmlstein Defeated 9"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: ...You should heed my warning."
+    		"es"	"{darkblue}Kahmlstein{default}: ...Escuchenme."
+  	}
+  	"Chaos Kahmlstein Defeated 10"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Stay away from anything involving Chaos. You don't want to turn into what i turned into."
+    		"es"	"{darkblue}Kahmlstein{default}: No se metan en lo que sea que involucre el Caos. No quieren convertirse en lo que era yo."
+  	}
+  	"Chaos Kahmlstein Defeated 11"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: If you wish to fight it, be my guest."
+    		"es"	"{darkblue}Kahmlstein{default}: Si quieren pelear contra este, como deseen."
+  	}
+  	"Chaos Kahmlstein Defeated 12"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: One advice, just stay true to yourselves."
+    		"es"	"{darkblue}Kahmlstein{default}: Un consejito igual, mantenganse fieles a ustedes mismos."
+  	}
+  	"Chaos Kahmlstein Defeated 13"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: Here, take this. It's going to be safe in your hands."
+    		"es"	"{darkblue}Kahmlstein{default}: Tomen. Estara mejor en sus manos que en las mias."
+  	}
+  	"Chaos Kahmlstein Reward"
+  	{
+    		"en"	"{default}Kahmlstein hands you over his {red}Contained Chaos{default}."
+    		"es"	"{default}Kahmlstein les entrega su {red}Caos Contenido{default}."
+  	}
+  	"Chaos Kahmlstein Ending"
+  	{
+    		"en"	"{darkblue}Kahmlstein{default}: I'll be on my way now. {crimson}I've got some unfinished business to deal with.{default}"
+    		"es"	"{darkblue}Kahmlstein{default}: Tengo que irme ahora. {crimson}Hay algo que debo terminar.{default}"
+  	}
+}
