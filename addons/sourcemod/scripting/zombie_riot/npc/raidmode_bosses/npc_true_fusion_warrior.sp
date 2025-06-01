@@ -528,7 +528,7 @@ public void TrueFusionWarrior_ClotThink(int iNPC)
 		else if(GetGameTime() + 5.0 > npc.m_flTimeSinceHasBeenHurt && i_SaidLineAlready[npc.index] < 4)
 		{
 			i_SaidLineAlready[npc.index] = 4;
-			CCPrintToChatAll("%t", "Infected Silvester Defeated 5");
+			CPrintToChatAll("%t", "Infected Silvester Defeated 5");
 		}
 		else if(GetGameTime() + 10.0 > npc.m_flTimeSinceHasBeenHurt && i_SaidLineAlready[npc.index] < 3)
 		{
