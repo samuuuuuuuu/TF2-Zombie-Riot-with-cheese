@@ -1902,7 +1902,7 @@
 	"Glass Cannon Blueprints Desc"
 	{
 		"en"	"30％ more building damage, 75％ less building HP, can only have 1 support buidling/cant build more/claim more.\nAlso works with Barraks, gives units 15％ more damage."
-		"es"	"+30%% de daño de construccion, -75%% de vida de construccion\nImpide poner mas de 1 construccion de soporte.\nFunciona con los barracks, dandoles mas daño pero reduciendo su vida"
+		"es"	"+30%% de daño de construccion, -75%% de vida de construccion\nImpide poner mas de 1 construccion de soporte.\nFunciona con los cuarteles, dando mas daño pero reduciendo la vida de tu ejercito"
 		"fr"	"2x dégats, -75％ durabilité pour vos constructions. +15％ dégats pour les unités de vos casernes.\nPeut seulement avoir 1 espace pour construction de support."
 		"ru"	"На 30％ больше урона у построек, на 75％ меньше ОЗ у построек, можно иметь только 1 здание поддержки/можно строить больше/забрать больше.\nДаёт боевым единицам из казарм на 15％ больше урона."
 		"chi"	"+30%建筑伤害，-75％建筑血量，辅助建筑上限限制为1\n兵营获得+15％伤害。"
@@ -2253,6 +2253,7 @@
 	"Barracks Desc"
 	{
 		"en"	"Allows training allies to fight for you.\nRepair upgrades provides more resources.\nBuilding upgrades provides stronger allies.\nPress R on your troops to give more commands."
+		"es"	"Permite entrar a aliados para que luchen por ti.\nLas mejoras de reparacion aumentan la ganancia de recursos.\nLas mejoras de construccion proveen mejores aliados.\nPresiona RELOAD en tus aliados para dar mas ordenes."
 		"fr"	"Forme des unités pour vous aider dans le combat.\nLes améliorations de réparation vous donne plus de ressources.\nLes améliorations de construction donne accès à des unités plus fortes.\nAppuyez sur R pour donner des commandes manuelles à vos unités."
 		"chi"	"兵营内可以训练出你的私人军队！\n建筑升级加强兵营NPC，修复升级提供更多资源。\n对NPC按装弹键命令他们。"
 	}
@@ -2265,10 +2266,12 @@
 	"Barracks Desc Extra 2"
 	{
 		"en"	"You also gain resources when hurting enemies with UNITS.\nIf youre too far away from your units, they generate much less!\nMelee damage give 4.5x the resources.\nYour resources have a cap, dont hoard them! (gold excluded)"
+		"es"	"Ganas recursos cuando tus aliados golpean a enemigos.\nSi estas muy lejos de tus aliados, generas menos!\nEl daño a melee dara muchos mas recursos."
 	}
 	"Militia Desc"
 	{
 		"en"	"Standard melee unit. Very disposable. Works better when grouped up with more Militia."
+		"es"	"Unidad a melee estandar. Muy desechable. Funciona mejor si se junta con mas Milicia."
 		"fr"	"Unité de mêlée standard. Très jetable. Fonctionne mieux lorsqu'il est regroupé avec plus de milice."
 		"ru"	"Стандартный юнит ближнего боя. Очень одноразовый. Работает лучше, когда объединено с большим количеством ополченцев."
 		"chi"   "标准近战单位。非常一次性。与更多民兵组合时效果更好。"
@@ -2276,6 +2279,7 @@
 	"Archer Desc"
 	{
 		"en"	"Standard ranged unit. Will keep distance away from threat. Does more damage but attacks slower."
+		"es"	"Unidad a distancia estandar. Se mantendra lejos del peligro. Hace mas daño pero ataca mas lento."
 		"fr"	"Unité à distance standard. Gardera ses distances avec la menace. Fait plus de dégâts mais attaque plus lentement."
 		"ru"	"Стандартный юнит дальнего боя. Будет держаться на расстоянии от угрозы. Наносит больше урона, но атакует медленнее."
 		"chi"   "标准远程单位。会与威胁保持距离。伤害更高，但攻击速度更慢。"
@@ -2283,6 +2287,7 @@
 	"Man-At-Arms Desc"
 	{
 		"en"	"Direct upgrade to Militia. More health and damage."
+		"es"	"Mejora del Milicia. Mas daño y vida."
 		"fr"	"Mise à niveau directe vers Milice. Plus de santé et de dégâts."
 		"ru"	"Прямое обновление до Милиции. Больше здоровья и урона."
 		"chi"   "直接升级为民兵。更多的健康和伤害。"
@@ -2290,6 +2295,7 @@
 	"Crossbow Man Desc"
 	{
 		"en"	"Upgrade to Archers. Fires slower but does more damage from further away."
+		"es"	"Mejora del arquero. Dispara mas lento pero a una distancia mas segura y hace mas daño."
 		"fr"	"Passez aux archers. Tire plus lentement mais fait plus de dégâts à distance."
 		"ru"	"Обновитесь до лучников. Стреляет медленнее, но наносит больше урона с большего расстояния."
 		"chi"   "升级为弓箭手。发射速度较慢，但​​距离较远时造成的伤害更大。"
@@ -3437,22 +3443,27 @@
 	"USP Desc"
 	{
 		"en" 	"Basic pistol.\nDeals 20％ Extra headshot damage and has less falloff."
+		"es"	"Pistola basica.\nHace 20%% de daño extra a la cabeza y tiene menos decaida."
 	}
 	"USP PAP 1"
 	{
 		"en" 	"Incrased Attackspeed, clipsize, and damage."
+		"es"	"Daño, tamaño de cargador y velocidad de disparo aumentados."
 	}
 	"USP PAP 2"
 	{
 		"en" 	"Incrased Attackspeed, clipsize, and damage.\nWith your pistol you now revive allies 50％ Faster.\nM2 Activates Trigger finger!"
+		"es"	"Daño, tamaño de cargador y velocidad de disparo aumentados.\nTener esta pistola a mano revivira a aliados un 50%% mas rapido.\nDesbloquea Dedo Engatillado (Habilidad M2)"
 	}
 	"USP PAP 3"
 	{
 		"en" 	"Incrased Attackspeed, clipsize, and damage."
+		"es"	"Daño, tamaño de cargador y velocidad de disparo aumentados."
 	}
 	"USP PAP 4"
 	{
 		"en" 	"Incrased Attackspeed, clipsize, and damage.\nYour weapon has next to no falloff.\nAbility Lasts Longer."
+		"es"	"Daño, tamaño de cargador y velocidad de disparo aumentados.\nAhora el arma CASI no tiene decaida.\nDedo Engatillado dura mas."
 	}
 	"Autoshotgun Pap 2"
 	{
@@ -3712,12 +3723,14 @@
 	"Barracks"
 	{
 		"en"	"Barracks"
+		"es"	"Cuarteles"
 		"fr"	"Caserne"
 		"chi"	"兵营"
 	}
 	"Barracks Desc"
 	{
 		"en"	"Train your own army and upgrade them."
+		"es"	"Entrena tu propio ejercito y mejoralos."
 		"fr"	"Forme et améliore votre propre armée."
 		"chi"	"训练并升级属于你自己的军队！"
 	}
