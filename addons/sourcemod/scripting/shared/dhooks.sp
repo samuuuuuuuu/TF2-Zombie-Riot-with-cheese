@@ -56,7 +56,6 @@ stock Handle CheckedDHookCreateFromConf(Handle game_config, const char[] name) {
 
 void DHook_Setup()
 {
-//	return;
 	GameData gamedata = LoadGameConfigFile("zombie_riot");
 	
 	if (!gamedata) 
@@ -79,9 +78,8 @@ void DHook_Setup()
 	DHook_CreateDetour(gamedata, "CTFGameRules::IsQuickBuildTime", DHookCallback_CTFGameRules_IsQuickBuildTime_Pre);
 #endif
 
-#if !defined RTS
 	g_DHookMedigunPrimary = DHook_CreateVirtual(gamedata, "CWeaponMedigun::PrimaryAttack()");
-#endif
+
 
 #if defined ZR
 	DHook_CreateDetour(gamedata, "CTFProjectile_HealingBolt::ImpactTeamPlayer()", OnHealingBoltImpactTeamPlayer, _);
@@ -95,8 +93,6 @@ void DHook_Setup()
 	DHook_CreateDetour(gamedata, "CTFBaseBoss::ResolvePlayerCollision", DHook_ResolvePlayerCollisionPre, _);
 	DHook_CreateDetour(gamedata, "CTFGCServerSystem::PreClientUpdate", DHook_PreClientUpdatePre, DHook_PreClientUpdatePost);
 	DHook_CreateDetour(gamedata, "CTFSpellBook::CastSelfStealth", Dhook_StealthCastSpellPre, _);
-//	DHook_CreateDetour(gamedata, "PassServerEntityFilter", CH_PassServerEntityFilter);
-// Dhooking it like this is broken.
 	
 	g_DHookGrenadeExplode = DHook_CreateVirtual(gamedata, "CBaseGrenade::Explode");
 	g_DHookGrenade_Detonate = DHook_CreateVirtual(gamedata, "CBaseGrenade::Detonate");
@@ -201,27 +197,7 @@ void DHook_Setup()
 	
 	delete gamedata_lag_comp;
 }
-/*
-public MRESReturn DhookStrikeTargetArrow_Pre(int pThis, Handle hReturn, Handle hParams)
-{
-	PrintToChatAll("DhookStrikeTargetArrow_Pre");
-	int projtype = GetEntProp(pThis, Prop_Send, "m_iProjectileType");
-	PrintToChatAll("DhookStrikeTargetArrow_Pre projtype %i",projtype);
-	
-	if(projtype != 8)
-		return MRES_Ignored;
 
-	PrintToChatAll("DhookStrikeTargetArrow_Pre2");
-	int other = DHookGetParam(hParams, 2);
-
-	if(!b_ThisWasAnNpc[other])
-		return MRES_Ignored;
-	PrintToChatAll("DhookStrikeTargetArrow_Pre3");
-
-	DHookSetReturn(hReturn, true);
-	return MRES_Override;
-}
-*/
 int ClientThatWasChanged = 0;
 int SavedClassForClient = 0;
 public MRESReturn DHookCallback_TeamFortress_SetSpeed_Pre(int pThis)
@@ -996,13 +972,11 @@ public bool PassfilterGlobal(int ent1, int ent2, bool result)
 		{
 			return false;
 		}
-#if !defined RTS
 		if(b_ProjectileCollideIgnoreWorld[entity1])
 		{
-			Wand_Base_StartTouch(entity1, entity2);
+		//	Wand_Base_StartTouch(entity1, entity2);
 			return false;
 		}
-#endif
 
 #if defined ZR
 	
@@ -1034,15 +1008,11 @@ public bool PassfilterGlobal(int ent1, int ent2, bool result)
 			{
 				return false;
 			}
-#if !defined RTS
 			if(i_IsABuilding[entity2] && RaidbossIgnoreBuildingsLogic(2))
 			{
 				return false;
 			}
-#endif
 		}
-
-#if !defined RTS
 		else if(b_IsAProjectile[entity1] && GetTeam(entity1) == TFTeam_Red)
 		{
 #if defined ZR
@@ -1134,13 +1104,7 @@ public bool PassfilterGlobal(int ent1, int ent2, bool result)
 				return false;
 			}
 		}
-#endif	// Non-RTS
-//enemy NPC
-#if defined RTS
-		if(!b_NpcHasDied[entity1])
-#else	
 		if(!b_NpcHasDied[entity1] && GetTeam(entity1) != TFTeam_Red)
-#endif
 		{
 			//ignore buildings, neccecary during some situations
 			if(i_IsABuilding[entity2])
@@ -1162,11 +1126,7 @@ public bool PassfilterGlobal(int ent1, int ent2, bool result)
 					return false;
 				}
 			}
-#if defined RTS
-			else if(!b_NpcHasDied[entity2])
-#else
 			else if(!b_NpcHasDied[entity2] && GetTeam(entity2) != TFTeam_Red)
-#endif
 			{
 				return false;
 			}
@@ -1195,7 +1155,6 @@ public bool PassfilterGlobal(int ent1, int ent2, bool result)
 			
 		}
 //allied NPC
-#if !defined RTS
 		else if(!b_NpcHasDied[entity1] && GetTeam(entity1) == TFTeam_Red)
 		{
 			
@@ -1216,7 +1175,6 @@ public bool PassfilterGlobal(int ent1, int ent2, bool result)
 			}
 			
 		}
-#endif
 		else if(i_IsVehicle[entity1])
 		{
 			if(!i_IsVehicle[entity2])

@@ -31,15 +31,15 @@
 #define CHAR_PARTEMPTY	"▒"
 #define CHAR_EMPTY	"░"
 
-#define TFTeam			PLZUSE_int
+//#define TFTeam			PleaseUse_int
 #define TFTeam_Unassigned 	0
 #define TFTeam_Spectator 	1
 #define TFTeam_Red 		2
 #define TFTeam_Blue		3
 #define TFTeam_Stalkers 		5
 
-#define TF2_GetClientTeam	PLZUSE_GetTeam
-#define TF2_ChangeClientTeam	PLZUSE_SetTeam
+#define TF2_GetClientTeam	PleaseUse_GetTeam
+#define TF2_ChangeClientTeam	PleaseUse_SetTeam
 
 #define RoundState_ZombieRiot view_as<RoundState>(11)
 
@@ -654,20 +654,12 @@ int OriginalWeapon_AmmoType[MAXENTITIES];
 #include "viewchanges.sp"
 #endif
 
-#if !defined RTS
 #include "attributes.sp"
-#endif
 
-#if !defined NOG
 #include "commands.sp"
 #include "convars.sp"
 #include "dhooks.sp"
 #include "events.sp"
-#endif
-
-#if defined RTS
-#include "rtscamera.sp"
-#endif
 
 #if defined ZR || defined NOG
 #include "npccamera.sp"
@@ -983,10 +975,9 @@ public void OnMapStart()
 	Zero(f_MutePlayerTalkShutUp);
 	ResetIgnorePointVisible();
 	DHooks_MapStart();
-
 #if defined ZR || defined RPG
-	Core_PrecacheGlobalCustom();
 	FileNetwork_MapStart();
+	Core_PrecacheGlobalCustom();
 #endif
 
 	PrecacheSound("weapons/explode1.wav");
@@ -1154,7 +1145,7 @@ public void OnMapEnd()
 			KickClient(client);
 		}
 	}
-	Store_RandomizeNPCStore(1);
+	Store_RandomizeNPCStore(ZR_STORE_RESET);
 	OnRoundEnd(null, NULL_STRING, false);
 	Waves_MapEnd();
 	Spawns_MapEnd();
@@ -3186,13 +3177,6 @@ stock bool InteractKey(int client, int weapon, bool Is_Reload_Button = false)
 }
 #endif	// ZR & RPG
 
-/*
-public void Frame_OffCheats()
-{
-	CvarCheats.SetBool(false, false, false);
-}
-*/
-
 #if defined _tf2items_included
 public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int index, Handle &item)
 {
@@ -3396,6 +3380,7 @@ void ReviveClientFromOrToEntity(int target, int client, int extralogic = 0, int 
 		if(WasClientReviving)
 			speed = 6;
 	}
+		
 	if(medigun > 0)
 	{
 		speed = RoundToNearest(float(speed) * 0.65);
@@ -3405,6 +3390,14 @@ void ReviveClientFromOrToEntity(int target, int client, int extralogic = 0, int 
 		speed *= 2;
 	}
 
+	if(WasClientReviving)
+	{
+		int activeWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+		if(IsValidEntity(activeWeapon))
+		{
+			speed = RoundToNearest(float(speed) * Attributes_Get(activeWeapon, Attrib_ReviveSpeedBonus, 1.0));
+		}
+	}
 	Rogue_ReviveSpeed(speed);
 	if(WasRevivingEntity)
 	{
@@ -3668,4 +3661,35 @@ int CalcMaxPlayers()
 	*/
 
 	return playercount;
+}
+
+
+//This is needed as MVM breaks friendly fire.
+void TakeDamage_EnableMVM()
+{
+/*
+#if defined ZR
+	if(CheckInHud())
+		return;
+
+	if(mp_friendlyfire.IntValue == 0)
+		return;
+		
+	GameRules_SetProp("m_bPlayingMannVsMachine", true);
+#endif
+*/
+}
+void TakeDamage_DisableMVM()
+{
+/*
+#if defined ZR
+	if(CheckInHud())
+		return;
+
+	if(mp_friendlyfire.IntValue == 0)
+		return;
+
+	GameRules_SetProp("m_bPlayingMannVsMachine", false);
+#endif
+*/
 }
