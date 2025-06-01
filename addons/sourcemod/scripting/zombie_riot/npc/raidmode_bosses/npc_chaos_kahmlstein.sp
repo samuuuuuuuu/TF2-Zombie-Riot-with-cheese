@@ -406,7 +406,7 @@ methodmap ChaosKahmlstein < CClotBody
 				bool TotalShits = StrContains(data, "no_music_blitz") != -1;
 				if(!TotalShits)
 				{
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: Let's fight!");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Fight Begins");
 					MusicEnum music;
 					strcopy(music.Path, sizeof(music.Path), "#zombiesurvival/internius/chaos_reigns_loop.mp3");
 					music.Time = 240;
@@ -418,7 +418,7 @@ methodmap ChaosKahmlstein < CClotBody
 				}
 				else
 				{
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: Ahahahahahah!!! LETS GET THIS PARTY STARTED!!!!!");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Party");
 					f_MessengerSpeedUp[npc.index] *= 2.0;
 				}
 			}
@@ -604,7 +604,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				NPC_StopPathing(npc.index);
 				npc.m_bPathing = false;
 				i_khamlCutscene[npc.index] = 13;
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: I have seen enough.. I knew I should've stepped in from the start. {crimson} You made a mistake of sending him out alone.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Intro 1");
 				MusicEnum music;
 				strcopy(music.Path, sizeof(music.Path), "#zombiesurvival/internius/chaos_reigns_intro.mp3");
 				music.Time = 42;
@@ -652,7 +652,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 					strcopy(music.Artist, sizeof(music.Artist), "Grandpa Bard");
 					Music_SetRaidMusic(music, false);
 					i_khamlCutscene[npc.index] = 12;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: You. Come closer and look me in the face... {crimson} Or are you too scared?");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 2");
 				}
 			}
 			case 12:
@@ -660,7 +660,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 37.0)
 				{
 					i_khamlCutscene[npc.index] = 11;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: Brave against some cheap copy, but too scared of the real deal?");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 3");
 				}
 			}
 			case 11:
@@ -668,7 +668,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 33.0)
 				{
 					i_khamlCutscene[npc.index] = 10;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: You killed my men, {crimson}YOU KILLED MY PUP{default}, BUT YOU ARE TOO SCARED OF ME?!");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 4");
 				}
 			}
 			case 10:
@@ -676,7 +676,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 30.0)
 				{
 					i_khamlCutscene[npc.index] = 9;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: I will burn everything until there's nothing left, but ash. And from that ash...");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 5");
 				}
 			}
 			case 9:
@@ -684,7 +684,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 26.0)
 				{
 					i_khamlCutscene[npc.index] = 8;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: A BRAND NEW FREE WORLD WILL BE BORN!! A WORLD WITH NO ONE TO COMMAND YOU AGAIN!");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 6");
 				}
 			}
 			case 8:
@@ -692,7 +692,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 22.0)
 				{
 					i_khamlCutscene[npc.index] = 7;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: A WORLD RID OF THESE FUCKING PARASITES CALLED POLITICIANS! FREE FROM GOVERNMENTS!");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 7");
 				}
 			}
 			case 7:
@@ -700,7 +700,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 18.0)
 				{
 					i_khamlCutscene[npc.index] = 6;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: AN IDEAL WORLD, A PARADISE!!! SO STOP RESISTING AND ACCEPT IT DAMMIT!!");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 8");
 				}
 			}
 			case 6:
@@ -708,7 +708,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 12.0)
 				{
 					i_khamlCutscene[npc.index] = 5;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: ....no, this new world isn't going to welcome you anyway...");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 9");
 				}
 			}
 			case 5:
@@ -716,7 +716,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 9.0)
 				{
 					i_khamlCutscene[npc.index] = 4;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: Because you know what I hate the most, more than governments? {crimson}Violence against animals..");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 10");
 				}
 			}
 			case 4:
@@ -724,7 +724,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 4.0)
 				{
 					i_khamlCutscene[npc.index] = 3;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: {crimson}You murdered these cats in cold blood. And now I'm going to do the same with you.");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 11");
 				}
 			}
 			case 3:
@@ -732,7 +732,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 2.0)
 				{
 					i_khamlCutscene[npc.index] = 2;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: I will avenge you my dear companion, I will avenge everything.");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 12");
 				}
 			}
 			case 2:
@@ -740,7 +740,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 				if(TimeLeft < 0.0)
 				{
 					i_khamlCutscene[npc.index] = 0;
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: Let's begin.");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Intro 13");
 					RaidBossActive = EntIndexToEntRef(npc.index);
 					RaidAllowsBuildings = false;
 				}
@@ -759,19 +759,19 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 			{
 				case 0:
 				{
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: I am going to break every single bone in your body.");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Lastman 1");
 				}
 				case 1:
 				{
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: You're all alone against Chaos now.");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Lastman 2");
 				}
 				case 2:
 				{
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: I will drag you face down to the bottoms of the Deep Sea.");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Lastman 3");
 				}
 				case 3:
 				{
-					CPrintToChatAll("{darkblue}Kahmlstein{default}: Blitzkrierg was weak, that's why he failed. {crimson}Just like you are.");
+					CPrintToChatAll("%t", "Chaos Kahmlstein Lastman 4");
 				}
 			}
 		}
@@ -783,21 +783,21 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 		i_SpeedUpTime[npc.index] = 1; 
 		f_MessengerSpeedUp[npc.index] *= 1.15;
 		if(i_RaidGrantExtra[npc.index] < 2)
-			CPrintToChatAll("{darkblue}Kahmlstein{default}: I'm literally half asleep, let's heat things up.");
+			CPrintToChatAll("%t", "Chaos Kahmlstein Half Asleep");
 	}
 	else if(RaidModeTimeLeft < 130.0 && i_SpeedUpTime[npc.index] == 1)
 	{
 		i_SpeedUpTime[npc.index] = 2; 
 		f_MessengerSpeedUp[npc.index] *= 1.15;
 		if(i_RaidGrantExtra[npc.index] < 2)
-			CPrintToChatAll("{darkblue}Kahmlstein{default}: Even my dead grandma is more entertaining than this.");
+			CPrintToChatAll("%t", "Chaos Kahmlstein Dead Grandma");
 	}
 	else if(RaidModeTimeLeft < 70 && i_SpeedUpTime[npc.index] == 2)
 	{
 		i_SpeedUpTime[npc.index] = 3; 
 		f_MessengerSpeedUp[npc.index] *= 1.1;
 		if(i_RaidGrantExtra[npc.index] < 2)
-			CPrintToChatAll("{darkblue}Kahmlstein{default}:{crimson} RAAAAAAH, I'M UNSTOPPABLE!!!.");
+			CPrintToChatAll("%t", "Chaos Kahmlstein Unstoppable");
 	}
 	else if(RaidModeTimeLeft < 0.0 && i_SpeedUpTime[npc.index] == 3)
 	{
@@ -805,7 +805,7 @@ public void ChaosKahmlstein_ClotThink(int iNPC)
 		f_MessengerSpeedUp[npc.index] *= 3.0;
 		npc.m_flSpeed = 600.0;
 		if(i_RaidGrantExtra[npc.index] < 2)
-			CPrintToChatAll("{darkblue}Kahmlstein{default}:{crimson} YAAAAAAAAAAAAAAAAAAAAAAA.");
+			CPrintToChatAll("%t", "Chaos Kahmlstein Ragh");
 	}
 
 	if(npc.m_blPlayHurtAnimation)
@@ -1248,7 +1248,7 @@ public Action ChaosKahmlstein_OnTakeDamage(int victim, int &attacker, int &infli
 			RaidModeTime += 60.0;
 			f_TalkDelayCheck = GetGameTime() + 0.0;
 			ReviveAll(true);
-			CPrintToChatAll("{darkblue}Kahmlstein{default}: Ughhh... My head");
+			CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 1");
 			Music_SetRaidMusicSimple("vo/null.mp3", 60, false, 0.5);
 			return Plugin_Handled;
 		}
@@ -1266,7 +1266,7 @@ public Action ChaosKahmlstein_OnTakeDamage(int victim, int &attacker, int &infli
 			if(i_CustomWeaponEquipLogic[weapon] == WEAPON_KAHMLFIST)
 			{
 				b_khamlWeaponRage[npc.index] = true;
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: You dare to use my OWN fists against ME? Man fuck you.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Own Fists");
 			}
 		}
 	}
@@ -1309,7 +1309,7 @@ public void ChaosKahmlstein_NPCDeath(int entity)
 
 	if(i_RaidGrantExtra[npc.index] != 1)
 	{
-		CPrintToChatAll("{darkblue}Kahmlstein{default}: That was good, next time ill be sure to actually try, now factor in the chance i lied.");
+		CPrintToChatAll("%t", "Chaos Kahmlstein Normal Defeat");
 	}
 }
 /*
@@ -1607,19 +1607,19 @@ public void ChaosKahmlstein_OnTakeDamagePost(int victim, int attacker, int infli
 				{
 					case 0:
 					{
-						CPrintToChatAll("{darkblue}Kahmlstein{default}: Thanks for the tickles.");
+						CPrintToChatAll("%t", "Chaos Kahmlstein Powerup 1");
 					}
 					case 1:
 					{
-						CPrintToChatAll("{darkblue}Kahmlstein{default}: Oh no im so scared.");
+						CPrintToChatAll("%t", "Chaos Kahmlstein Powerup 2");
 					}
 					case 2:
 					{
-						CPrintToChatAll("{darkblue}Kahmlstein{default}: Even bugs hit harder.");
+						CPrintToChatAll("%t", "Chaos Kahmlstein Powerup 3");
 					}
 					case 3:
 					{
-						CPrintToChatAll("{darkblue}Kahmlstein{default}: Keep running, that'll help.");
+						CPrintToChatAll("%t", "Chaos Kahmlstein Powerup 4");
 					}
 				}
 				f_KahmlResTemp[npc.index] = GetGameTime() + 3.5;
@@ -1637,19 +1637,19 @@ public void ChaosKahmlstein_OnTakeDamagePost(int victim, int attacker, int infli
 		{
 			case 0:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: You should give it 200%.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Enrage 1");
 			}
 			case 1:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: Pathetic.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Enrage 2");
 			}
 			case 2:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: Such idiots.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Enrage 3");
 			}
 			case 3:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: All your cruelty, worse then states.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Enrage 4");
 			}
 		}
 		RaidModeScaling *= 1.2;
@@ -1973,15 +1973,15 @@ public void ChaosKahmlstein_Win(int entity)
 	{
 		case 0:
 		{
-			CPrintToChatAll("{darkblue}Kahmlstein{default}: You are no more.");
+			CPrintToChatAll("%t", "Chaos Kahmlstein Win 1");
 		}
 		case 1:
 		{
-			CPrintToChatAll("{darkblue}Kahmlstein{default}: Everything burns.");
+			CPrintToChatAll("%t", "Chaos Kahmlstein Win 2");
 		}
 		case 2:
 		{
-			CPrintToChatAll("{darkblue}Kahmlstein{default}: Chaos shall reign.");
+			CPrintToChatAll("%t", "Chaos Kahmlstein Win 3");
 		}
 	}
 }
@@ -2014,77 +2014,77 @@ int ChaosKahmlsteinTalk(int iNPC)
 			{
 				f_TalkDelayCheck = GetGameTime() + 2.3;
 				npc.SetPlaybackRate(0.5);
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: I feel like a great weight was lifted off my shoulders.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 2");
 				i_TalkDelayCheck += 1;
 			}
 			case 2:
 			{
 				npc.m_bisWalking = false;
 				npc.SetActivity("ACT_MP_STAND_MELEE");
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: The chaos, it has left me completely it seems.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 3");
 				i_TalkDelayCheck += 1;
 			}
 			case 3:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: But the knowledge of everything I did didn't.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 4");
 				i_TalkDelayCheck += 1;
 			}
 			case 4:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: I can't turn back time now, however. What done is done.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 5");
 				i_TalkDelayCheck += 1;
 			}
 			case 5:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: I made an awful mistake of trying to research it once.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 6");
 				i_TalkDelayCheck += 1;
 			}
 			case 6:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: Looks like that made me a perfect specimen to make batshit insane.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 7");
 				i_TalkDelayCheck += 1;
 			}
 			case 7:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: Curiosity killed the cat, like they say.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 8");
 				i_TalkDelayCheck += 1;
 			}
 			case 8:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: You should heed my warning.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 9");
 				i_TalkDelayCheck += 1;
 			}
 			case 9:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: Stay away from matters involving Chaos, or else you will be next.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 10");
 				i_TalkDelayCheck += 1;
 			}
 			case 10:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: If you somehow wish to fight it, be my guest.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 11");
 				i_TalkDelayCheck += 1;
 			}
 			case 11:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: One advice, just stay true to yourselves.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 12");
 				i_TalkDelayCheck += 1;
 			}
 			case 12:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: Here, take this. It's going to be safe in your hands.");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 13");
 				i_TalkDelayCheck += 1;
 				for (int client = 0; client < MaxClients; client++)
 				{
 					if(IsValidClient(client) && GetClientTeam(client) == 2 && TeutonType[client] != TEUTON_WAITING && PlayerPoints[client] > 500)
 					{
 						Items_GiveNamedItem(client, "Kahml's Contained Chaos");
-						CPrintToChat(client,"{default}You get: {red}''Kahml's Contained Chaos''{default}!");
+						CPrintToChat(client, "%t", "Chaos Kahmlstein Reward");
 					}
 				}
 			}
 			case 13:
 			{
-				CPrintToChatAll("{darkblue}Kahmlstein{default}: I have something to attend to now, {crimson}some unfinished business.{default}");
+				CPrintToChatAll("%t", "Chaos Kahmlstein Ending");
 				i_TalkDelayCheck += 1;
 				npc.m_bisWalking = false;
 				npc.AddActivityViaSequence("taunt_cyoa_PDA_intro");
