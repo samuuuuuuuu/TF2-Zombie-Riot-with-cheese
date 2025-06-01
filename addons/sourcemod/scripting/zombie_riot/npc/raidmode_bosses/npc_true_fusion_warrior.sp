@@ -441,15 +441,15 @@ public void TrueFusionWarrior_ClotThink(int iNPC)
 			{
 				case 0:
 				{
-					CPrintToChatAll("{gold}Silvester?{default}: Run... Away...");
+					CPrintToChatAll("%t", "Infected Silvester Lastman 1");
 				}
 				case 1:
 				{
-					CPrintToChatAll("{gold}Silvester?{default}: Help...");
+					CPrintToChatAll("%t", "Infected Silvester Lastman 2");
 				}
 				case 3:
 				{
-					CPrintToChatAll("{gold}Silvester?{crimson}: AGHHRRR!!!");
+					CPrintToChatAll("%t", "Infected Silvester Lastman 3");
 				}
 			}
 		}
@@ -458,14 +458,14 @@ public void TrueFusionWarrior_ClotThink(int iNPC)
 	{
 		func_NPCThink[npc.index] = INVALID_FUNCTION;
 		
-		CPrintToChatAll("{gold}Silvester?{default}: New... victims to infect...");
+		CPrintToChatAll("%t", "Infected Silvester Win by Kill");
 		return;
 	}
 	if(RaidModeTime < GetGameTime())
 	{
 		ForcePlayerLoss();
 		RaidBossActive = INVALID_ENT_REFERENCE;
-		CPrintToChatAll("{gold}Silvester?{default}: {green}Xeno{default} virus too strong... to resist.. {crimson}join...{default}");
+		CPrintToChatAll("%t", "Infected Silvester Win by Time");
 		func_NPCThink[npc.index] = INVALID_FUNCTION;
 		return;
 	}
@@ -509,37 +509,41 @@ public void TrueFusionWarrior_ClotThink(int iNPC)
 		}
 		if(GetGameTime() > npc.m_flTimeSinceHasBeenHurt)
 		{
-			CPrintToChatAll("{gold}Silvester{default}: You will get soon in touch with a friend of mine, I thank you, though beware of the rogue machine... {red}Blitzkrieg.");
+			CPrintToChatAll("%t", "Infected Silvester Defeated 6");
 			npc.m_bDissapearOnDeath = true;
 			RequestFrame(KillNpc, EntIndexToEntRef(npc.index));
 			for (int client = 0; client < MaxClients; client++)
 			{
 				if(IsValidClient(client) && GetClientTeam(client) == 2 && TeutonType[client] != TEUTON_WAITING && PlayerPoints[client] > 500)
 				{
+					CPrintToChat(client, "%t", "Infected Silvester Defeated 7");
+
+					if(!Items_HasNamedItem(client, "Cured Silvester"))
+						CPrintToChat(client, "%t", "Infected Silvester Reward First Time");
+
 					Items_GiveNamedItem(client, "Cured Silvester");
-					CPrintToChat(client,"{default}You gained his favor, you obtained: {yellow}''Cured Silvester''{default}!");
 				}
 			}
 		}
 		else if(GetGameTime() + 5.0 > npc.m_flTimeSinceHasBeenHurt && i_SaidLineAlready[npc.index] < 4)
 		{
 			i_SaidLineAlready[npc.index] = 4;
-			CPrintToChatAll("{gold}Silvester{default}: Help the world, retain the chaos!");
+			CCPrintToChatAll("%t", "Infected Silvester Defeated 5");
 		}
 		else if(GetGameTime() + 10.0 > npc.m_flTimeSinceHasBeenHurt && i_SaidLineAlready[npc.index] < 3)
 		{
 			i_SaidLineAlready[npc.index] = 3;
-			CPrintToChatAll("{gold}Silvester{default}: I thank you, but i will need help from you later, and I will warn you of dangers.");
+			CPrintToChatAll("%t", "Infected Silvester Defeated 4");
 		}
 		else if(GetGameTime() + 13.0 > npc.m_flTimeSinceHasBeenHurt && i_SaidLineAlready[npc.index] < 2)
 		{
 			i_SaidLineAlready[npc.index] = 2;
-			CPrintToChatAll("{gold}Silvester{default}: A huge chaos is breaking out, you were able to knock some sense into me..!");
+			CPrintToChatAll("%t", "Infected Silvester Defeated 3");
 		}
 		else if(GetGameTime() + 16.5 > npc.m_flTimeSinceHasBeenHurt && i_SaidLineAlready[npc.index] < 1)
 		{
 			i_SaidLineAlready[npc.index] = 1;
-			CPrintToChatAll("{gold}Silvester{default}: Listen to me, please!");
+			CPrintToChatAll("%t", "Infected Silvester Defeated 2");
 		}
 		return; //He is trying to help.
 	}
@@ -986,7 +990,7 @@ public Action TrueFusionWarrior_OnTakeDamage(int victim, int &attacker, int &inf
 
 			SDKUnhook(npc.index, SDKHook_Think, TrueFusionWarrior_TBB_Tick);
 
-			CPrintToChatAll("{gold}Silvester{default}: Stop, stop please I beg you, I was infected!");
+			CPrintToChatAll("%t", "Infected Silvester Defeated 1");
 			int i = MaxClients + 1;
 			while((i = FindEntityByClassname(i, "obj_sentrygun")) != -1)
 			{
