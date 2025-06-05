@@ -1530,6 +1530,11 @@
 		"#format"	"{1:s},{2:s},{3:.0f}"
 		"en"		"HP: {1} / {2} | Repair left: {3}％"
 	}
+	"Viality Building Display"
+	{
+		"#format"	"{1:s},{2:s},{3:.0f}"
+		"en"		"HP: {1} / {2} | Repair left: {3}％"
+	}
 	"Interact With T Spray"
 	{
 		"en"		"Press [T(Spray)/ Use] "

@@ -3442,8 +3442,8 @@
 	}
 	"USP Desc"
 	{
-		"en" 	"Basic pistol.\nDeals 20％ Extra headshot damage and has less falloff."
-		"es"	"Pistola basica.\nHace 20%% de daño extra a la cabeza y tiene menos decaida."
+		"en" 	"Basic pistol.\nDeals 20％ Extra headshot damage."
+		"es"	"Pistola basica.\nHace 20%% de daño extra a la cabeza."
 	}
 	"USP PAP 1"
 	{
@@ -3462,8 +3462,8 @@
 	}
 	"USP PAP 4"
 	{
-		"en" 	"Incrased Attackspeed, clipsize, and damage.\nYour weapon has next to no falloff.\nAbility Lasts Longer."
-		"es"	"Daño, tamaño de cargador y velocidad de disparo aumentados.\nAhora el arma CASI no tiene decaida.\nDedo Engatillado dura mas."
+		"en" 	"Incrased Attackspeed, clipsize, and damage.\nYour weapon has less falloff.\nAbility Lasts Longer."
+		"es"	"Daño, tamaño de cargador y velocidad de disparo aumentados.\nAhora el arma tiene menos decaida.\nDedo Engatillado dura mas."
 	}
 	"Autoshotgun Pap 2"
 	{
@@ -3552,6 +3552,10 @@
 		"fr"	"Vous permet de voir l'armure de vos alliés."
 		"chi"	"看队友的护甲！"
 	}
+	"Building Health Forcer Desc"
+	{
+		"en"	"This makes you always see building HP, No matter what weapon you have."
+	}
 	"Siccerino Pap 2"
 	{
 		"en"	"Your attacks will debuff the enemy so you deal 5％ more damage with each hit you do upto a cap.\nM2 ability changes into a rapidly fast attacking melee."
@@ -3619,7 +3623,7 @@
 	}
 	"The Tinker Desc"
 	{
-		"en"	"A blacksmith builder capable of generating metal, already including building upgrades and gear.\nTINKER'S WORKSHOP: Building which allows players to tinker weapons.\nTinkering (or reusing) applies a random set of attributes to the weapon."
+		"en"	"A Blacksmith builder, can only make an anvil as a unique building.\nAnvil can upgrade weapons.\nPrimary: Heals buildings, hurts enemeis, infinite range building pickup.\nSecondary: Generates metal."
 		"es"	"Un constructor herrero capaz de generar metal, incluyendo ya mejoras y equipo de construccion.\nYUNQUE DEL CALDERERO: Permite reforjar el arma en tu mano.\nReforjar un arma aplicara un conjunto de atributos al azar."
 		"fr"	"Bonne résistance et regénére du métal.\nPeut construire une enclume qui permet aux coéquiper de modifier leurs armes.\nLes modifications donne des attributs aléatoires.\nVient avec des améliorations pour Constructeur."
 		"chi"	"匠工建筑师，自带建筑升级和装备。\n多一个建筑：匠工台。\n会对武器附加随机属性。\n自动回复金属，更肉。"

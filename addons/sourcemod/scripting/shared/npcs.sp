@@ -82,7 +82,7 @@ public void NPC_SpawnNext(bool panzer, bool panzer_warning)
 		if(ScalingEnemies >= 14.0)
 			ScalingEnemies = 14.0;
 
-		ScalingEnemies *= zr_multi_multiplier.FloatValue;
+		ScalingEnemies *= zr_multi_scaling.FloatValue;
 
 		float f_limit = Pow(1.115, ScalingEnemies);
 
@@ -2028,7 +2028,7 @@ stock bool Calculate_And_Display_HP_Hud(int attacker, bool ToAlternative = false
 		
 		CClotBody npcstats = view_as<CClotBody>(victim);
 		if(b_ThisWasAnNpc[victim] && npcstats.m_iHealthBar > 0)
-			Format(ExtraHudHurt, sizeof(ExtraHudHurt), "%s x%i",ExtraHudHurt, npcstats.m_iHealthBar);
+			Format(ExtraHudHurt, sizeof(ExtraHudHurt), "%s x%i",ExtraHudHurt, npcstats.m_iHealthBar + 1);
 
 		//add debuff
 		if(Debuff_Adder[0])
@@ -2043,7 +2043,7 @@ stock bool Calculate_And_Display_HP_Hud(int attacker, bool ToAlternative = false
 
 			Format(ExtraHudHurt, sizeof(ExtraHudHurt), "%s \n-%s", ExtraHudHurt, c_DmgDelt);	
 		}
-		ShowSyncHudText(attacker, SyncHudRaid,"%s",ExtraHudHurt);	
+		ShowSyncHudText(attacker, SyncHudRaid, ExtraHudHurt);	
 
 	}
 #endif
@@ -2469,7 +2469,7 @@ void GiveProgressDelay(float Time)
 #if defined ZR
 int MaxNpcEnemyAllowed()
 {
-	return RoundToNearest(float(NPC_HARD_LIMIT) * zr_multi_maxcap.FloatValue);
+	return RoundToNearest(float(NPC_HARD_LIMIT) * zr_multi_maxenemiesalive_cap.FloatValue);
 }
 
 float MaxEnemyMulti()

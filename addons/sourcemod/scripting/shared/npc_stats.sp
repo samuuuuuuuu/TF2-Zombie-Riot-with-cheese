@@ -2371,7 +2371,7 @@ methodmap CClotBody < CBaseCombatCharacter
 			}
 		}
 	}
-	public void FaceTowards(float vecGoal[3], float turnrate = 250.0)
+	public void FaceTowards(float vecGoal[3], float turnrate = 250.0, bool TurnOnWalk = false)
 	{
 		//Sad!
 		//Dont use face towards, why?
@@ -2409,7 +2409,13 @@ methodmap CClotBody < CBaseCombatCharacter
 				angles.y += angleDiff;
 			}
 		*/
-		float deltaT = GetTickInterval();
+		float deltaT = 0.015;
+		//I am dumb, we accidentally made it scale with tickrate....
+		//facepalm.
+		if(TurnOnWalk)
+		{
+			deltaT = GetTickInterval();
+		}
 
 		float angles[3];
 		GetEntPropVector(this.index, Prop_Data, "m_angRotation", angles);
@@ -3343,6 +3349,7 @@ public void NPC_Base_InitGamedata()
 	GameData gamedata = LoadGameConfigFile("zombie_riot");
 	
 	DHook_CreateDetour(gamedata, "NextBotGroundLocomotion::UpdateGroundConstraint", Dhook_UpdateGroundConstraint_Pre, Dhook_UpdateGroundConstraint_Post);
+//	DHook_CreateDetour(gamedata, "CBaseAnimating::GetBoneCache", Dhook_BoneAnimPrintDo, _);
 	//this isnt directly the same function, but it should act the same.
 	
 	//SDKCalls
@@ -4217,7 +4224,7 @@ public int Action_CommandApproach(NextBotAction action, int actor, const float p
 		float pos2[3];
 		pos2 = pos;
 		if(!npc.m_bAllowBackWalking)
-			npc.FaceTowards(pos2, (500.0 * npc.GetDebuffPercentage() * f_NpcTurnPenalty[npc.index]));
+			npc.FaceTowards(pos2, (500.0 * npc.GetDebuffPercentage() * f_NpcTurnPenalty[npc.index]), true);
 	}
 	else
 	{
@@ -8682,8 +8689,20 @@ public MRESReturn Rocket_Particle_DHook_RocketExplodePre(int entity)
 {
 	return MRES_Supercede;	//Don't even think about it mate
 }
-
-
+/*
+public MRESReturn Dhook_BoneAnimPrintDo(int entity, DHookReturn ret)
+{
+	if(b_IsInUpdateGroundConstraintLogic)
+	{
+		static char buffer[64];
+		GetEntityClassname(entity, buffer, sizeof(buffer));
+		char model[256];
+		CBaseEntity(entity).GetModelName(model, sizeof(model));
+		PrintToServer("[RPG DEBUG] Dhook_BoneAnimPrintDo Entity: %i| Classname %s | Model Mame %s",entity, buffer, model);
+	}
+	return MRES_Ignored;
+}
+*/
 public MRESReturn Dhook_UpdateGroundConstraint_Pre(DHookParam param)
 {
 	b_IsInUpdateGroundConstraintLogic = true;

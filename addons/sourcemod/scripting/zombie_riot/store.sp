@@ -36,6 +36,7 @@ enum struct ItemInfo
 
 	int IsWand;
 	bool IsWrench;
+	bool Visible_BuildingStats;
 	bool IsSupport;
 	bool IsAlone;
 	bool InternalMeleeTrace;
@@ -236,6 +237,9 @@ enum struct ItemInfo
 
 		Format(buffer, sizeof(buffer), "%sis_a_wrench", prefix);
 		this.IsWrench	= view_as<bool>(kv.GetNum(buffer));
+
+		Format(buffer, sizeof(buffer), "%svisible_building_stats", prefix);
+		this.Visible_BuildingStats	= view_as<bool>(kv.GetNum(buffer));
 
 		Format(buffer, sizeof(buffer), "%sis_a_support", prefix);
 		this.IsSupport	= view_as<bool>(kv.GetNum(buffer));
@@ -2757,14 +2761,11 @@ void Store_RandomizeNPCStore(int StoreFlags, int addItem = 0, float override = -
 					if(info.Cost > 0 && info.Cost_Unlock > ((GrigoriCashLogic / 3)- 1000) && info.Cost_Unlock < GrigoriCashLogic)
 						indexes[amount++] = i;
 				}
-				
-				if(item.NPCSeller_WaveStart <= 0)
-				{
-					item.NPCSeller_Discount = 1.0;
-				}
-				if(item.NPCSeller && addItem == 0)
+
+				if(item.NPCSeller && addItem == 0 && item.NPCSeller_WaveStart <= 0)
 				{
 					item.NPCSeller = false;
+					item.NPCSeller_Discount = 1.0;
 					StoreItems.SetArray(i, item);
 				}
 			}
@@ -2866,6 +2867,8 @@ void Store_RandomizeNPCStore(int StoreFlags, int addItem = 0, float override = -
 
 					if(ParentItem.NPCSeller_WaveStart < item.NPCSeller_WaveStart)
 						ParentItem.NPCSeller_WaveStart = item.NPCSeller_WaveStart;
+
+					ParentItem.NPCSeller = true;
 						
 					StoreItems.SetArray(item.Section, ParentItem);
 					if(ParentItem.Section != -1)
@@ -5103,6 +5106,7 @@ void Store_ApplyAttribs(int client)
 	{
 		map.SetValue("287", 0.5);
 	}
+	map.SetValue("95", 1.0);
 
 	float value;
 	char buffer1[12];
@@ -5389,6 +5393,7 @@ void Store_GiveAll(int client, int health, bool removeWeapons = false)
 	b_ExpertTrapper[client] = false;
 	b_RaptureZombie[client] = false;
 	b_ArmorVisualiser[client] = false;
+	b_CanSeeBuildingValues_Force[client] = false;
 	b_Reinforce[client] = false;
 	i_MaxSupportBuildingsLimit[client] = 0;
 	b_PlayerWasAirbornKnockbackReduction[client] = false;
@@ -5709,6 +5714,7 @@ int Store_GiveItem(int client, int index, bool &use=false, bool &found=false)
 				i_IsAloneWeapon[entity] = false;
 				i_IsWandWeapon[entity] = false;
 				i_IsWrench[entity] = false;
+				b_CanSeeBuildingValues[entity] = false;
 				i_IsSupportWeapon[entity] = false;
 				i_IsKitWeapon[entity] = false;
 				i_InternalMeleeTrace[entity] = true;
@@ -5801,6 +5807,10 @@ int Store_GiveItem(int client, int index, bool &use=false, bool &found=false)
 					if(info.IsWrench)
 					{
 						i_IsWrench[entity] = true;
+					}
+					if(info.Visible_BuildingStats)
+					{
+						b_CanSeeBuildingValues[entity] = true;
 					}
 					if(info.IsSupport)
 					{
@@ -6042,6 +6052,10 @@ int Store_GiveItem(int client, int index, bool &use=false, bool &found=false)
 					if(info.SpecialAdditionViaNonAttribute == 14)
 					{
 						b_Reinforce[client] = true;
+					}
+					if(info.SpecialAdditionViaNonAttribute == 15)
+					{
+						b_CanSeeBuildingValues_Force[client] = true;
 					}
 
 					int CostDo;

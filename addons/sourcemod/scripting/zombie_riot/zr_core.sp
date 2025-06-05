@@ -266,10 +266,10 @@ ConVar Cvar_VshMapFix;
 ConVar CvarNoSpecialZombieSpawn;
 ConVar zr_disablerandomvillagerspawn;
 ConVar zr_waitingtime;
-ConVar zr_enemymulticap;
+ConVar zr_maxscaling_untillhp;
 ConVar zr_raidmultihp;
-ConVar zr_multi_maxcap;
-ConVar zr_multi_multiplier;
+ConVar zr_multi_maxenemiesalive_cap;
+ConVar zr_multi_scaling;
 int CurrentGame = -1;
 bool b_GameOnGoing = true;
 //bool b_StoreGotReset = false;
@@ -3001,6 +3001,7 @@ void ForcePlayerWin(bool fakeout = false)
 void ForcePlayerLoss()
 {
 	MVMHud_Disable();
+	ZR_NpcTauntWin();
 	ZR_NpcTauntWinClear();
 	int entity = CreateEntityByName("game_round_win"); 
 	DispatchKeyValue(entity, "force_map_reset", "1");

@@ -1330,9 +1330,7 @@ stock int HealEntityGlobal(int healer, int reciever, float HealTotal, float Maxh
 		if(b_HealthyEssence && GetTeam(reciever) == TFTeam_Red)
 			HealTotal *= 1.25;
 			
-		bool RegrowthBlock;
- 		Building_CamoOrRegrowBlocker(healer, _, RegrowthBlock);
-		if(RegrowthBlock)
+		if(HasSpecificBuff(reciever, "Growth Blocker"))
 		{
 			HealTotal *= 0.85;
 		}
@@ -2850,7 +2848,8 @@ stock int Target_Hit_Wand_Detection(int owner_projectile, int other_entity)
 	{
 		return -1;
 	}
-	else if(i_IsABuilding[other_entity])
+	//Re-use b_AllowCollideWithSelfTeam here
+	else if(!b_AllowCollideWithSelfTeam[owner_projectile] && i_IsABuilding[other_entity])
 	{
 		return -1;
 	}
@@ -3040,7 +3039,7 @@ float ZRStocks_PlayerScalingDynamic(float rebels = 0.5, bool IgnoreMulti = false
 		ScaleReturn += Citizen_Count() * rebels;
 
 	if(!IgnoreMulti)
-		ScaleReturn *= zr_multi_multiplier.FloatValue;
+		ScaleReturn *= zr_multi_scaling.FloatValue;
 	
 	return ScaleReturn;
 }
