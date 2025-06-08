@@ -512,7 +512,7 @@ public void TrueFusionWarrior_ClotThink(int iNPC)
 			CPrintToChatAll("%t", "Infected Silvester Defeated 6");
 			npc.m_bDissapearOnDeath = true;
 			RequestFrame(KillNpc, EntIndexToEntRef(npc.index));
-			for (int client = 0; client < MaxClients; client++)
+			for (int client = 1; client <= MaxClients; client++)
 			{
 				if(IsValidClient(client) && GetClientTeam(client) == 2 && TeutonType[client] != TEUTON_WAITING && PlayerPoints[client] > 500)
 				{

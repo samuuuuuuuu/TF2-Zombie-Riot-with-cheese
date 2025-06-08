@@ -2075,7 +2075,7 @@ int ChaosKahmlsteinTalk(int iNPC)
 			{
 				CPrintToChatAll("%t", "Chaos Kahmlstein Defeated 13");
 				i_TalkDelayCheck += 1;
-				for (int client = 0; client < MaxClients; client++)
+				for (int client = 1; client <= MaxClients; client++)
 				{
 					if(IsValidClient(client) && GetClientTeam(client) == 2 && TeutonType[client] != TEUTON_WAITING && PlayerPoints[client] > 500)
 					{
