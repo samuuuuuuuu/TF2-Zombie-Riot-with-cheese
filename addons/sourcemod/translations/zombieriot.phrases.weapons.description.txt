@@ -355,6 +355,18 @@
 	{
 		"en"		"Increased damage, m2 ability buffed gains one extra throwable.\nYou will now always gib."
 	}
+	"Sherrif Pap 1"
+	{
+		"en"		"Slgihtly Increased Damage, Weapon changes.\nM2 now marks upto 5 enemies near you, hitting them deals 3x damage once.\nYour revolver turns into a burst 6 shot weapon."
+	}
+	"Sherrif Pap 2"
+	{
+		"en"		"Increased Damage\nM2 has a shorter cooldown."
+	}
+	"Sherrif Pap 3"
+	{
+		"en"		"Increased Damage\nR Ability Allows you to get your Lever-action.\nIts limited ammo, and also benifits from the same m2 bonus if you wish to combine it.\nSemifire is much faster then holding m1.\nIt deals explosive damage.\nHitting marked targets with your revolver reduces R Cooldown."
+	}
 	"Deagle Pap 2"
 	{
 		"en"		"Increased damage, m2 ability buffed gains one extra throwable.\n2 bullets per shot consumed."
@@ -1467,7 +1479,7 @@
 	"Builders Axe Desc"
 	{
 		"en"	"A melee axe that scales with builder damage.\nM2 to Lunge and for the next attack to deal 12x the damage.\nYou need to have enough upgrades for this to work."
-		"es"	"Un hacha que escala con el daño de constructor.\nM2: Embiste hacia adelante, el siguiente golpe hara un +1200%% de daño extra.\nNecesitas suficientes mejoras de constructor para que funcione."
+		"es"	"Un hacha que escala con el daño de constructor.\nM2: Embiste hacia adelante, el siguiente golpe hara un +1200％ de daño extra.\nNecesitas suficientes mejoras de constructor para que funcione."
 		"fr"	"Dégats corps-à-corps s'améliorent avec vos Améliorations Constructeur.\nAppuyez M2 pour vous lancer et améliorer les dégats de cet arme 12x.\nAméliorations Construction requis."
 	//	"ru"	"Гаечный ключ ближнего боя, у которого увеличивается урон с уроном строителя.\nM2 для броска и следующей атаки, наносящей в два раза больше урона.\nВам нужно иметь достаточно улучшений, чтобы это сработало."
 		"chi"   "一个近战扳手，随建造者伤害缩放。\nM2为突刺，下一次攻击将造成12倍伤害。你需要足够的金属才能让它工作。"
@@ -1627,11 +1639,11 @@
 	
 	"Alien Repair Handling book Desc"
 	{
-		"en"	"2.0x Repair Rate\nBuilding damage increaed by 1.15x (Not barracks)\nReduces cost of metal usage by 20％ (Cant go below 1)"
+		"en"	"2.0x Repair Rate\nBuilding damage increased by 1.15x (Not barracks)\nReduces cost of metal usage by 20％ (Cant go below 1)"
 	}
 	"Engineering Repair Handling book Desc"
 	{
-		"en"	"2.0x Repair Rate\nBuilding damage increaed by 1.15x (Not barracks)\nReduces cost of metal usage by 25％ (Cant go below 1)"
+		"en"	"2.0x Repair Rate\nBuilding damage increased by 1.15x (Not barracks)\nReduces cost of metal usage by 25％ (Cant go below 1)"
 	}
 	"Construction Worker Desc"
 	{
@@ -1642,7 +1654,7 @@
 	
 	"Cosmic Repair Handling book Desc"
 	{
-		"en"	"3x Repair Rate\nBuilding damage increaed by 1.15x (Not barracks)\nReduces cost of metal usage by 20％ (Cant go below 1)"
+		"en"	"3x Repair Rate\nBuilding damage increased by 1.15x (Not barracks)\nReduces cost of metal usage by 20％ (Cant go below 1)"
 	}
 	
 	"Construction Expert Desc"
@@ -2843,7 +2855,7 @@
 	}
 	"The Standchen Desc AltPap"
 	{
-		"en"	"Increased Damage\nAttacks deal Necrosis elemental damage."
+		"en"	"Increased Damage\nAttacks deal Necrosis elemental damage (true damage)."
 		"fr"	"Attaques ont un effet élémental Necrôse"
 	}
 	"The Standchen Desc AltPap 2"
@@ -3662,35 +3674,29 @@
 	}
 	"Tinker Pap 1 Desc"
 	{
-		"en"	"Increases building health and kit damage. Increases metal regen by +6.\nGrants +3 support buildings and reduces Tinker cooldown by 30s."
-		"es"	"Incrementa la vida de las construcciones y el daño del kit. Aumenta la regeneracion de metal en un +6.\nOtorga +3 construcciones de soporte y reduce el cooldown del yunque en 30s."
-		"fr"	"+65％ durabilité pour constructions, +202％ dégats, +100％ vitesse de réparation, +6 regénération de métal, +3 espaces pour construction de support et -30s temps de rechargement de l'enclume."
-		"chi"	"+65％建筑血量，+202%武器伤害，+100％修复速度，+6金属回复，+3辅助建筑，-30s工作台"
+		"en"	"+65％ Building Health, +202％ Weapon Damage, +100％ Repair Rate, +6 Metal Regen, +3 Support Buildings, and -20s Tinker Cooldown."
+		"fr"	"+65％ durabilité pour constructions, +202％ dégats, +100％ vitesse de réparation, +6 regénération de métal, +3 espaces pour construction de support et -20s temps de rechargement de l'enclume."
+		"chi"	"+65％建筑血量，+202%武器伤害，+100％修复速度，+6金属回复，+3辅助建筑，-20s工作台"
 	}
 	"Tinker Pap 2 Desc"
 	{
-		"en"	"Increases building health and kit damage. Increases metal regen by +6.\nGrants +4 support buildings and reduces Tinker cooldown by 30s.\nAdds a chance for Tier 2 effects."
-		"es"	"Incrementa la vida de las construcciones y el daño del kit. Aumenta la regeneracion de metal en un +6.\nOtorga +4 construcciones de soporte y reduce el cooldown del yunque en 30s.\nAhora puedes sacar sets de atributos de Tier 2!"
+		"en"	"+65％ Building Health, +75％ Weapon Damage, +6 Metal Regen, +4 Support Buildings, and -20s Tinker Cooldown.\nAdds a chance for Tier 2 effects\nReduces Metal drain(cant go below 1)"
 	}
 	"Tinker Pap 3 Desc"
 	{
-		"en"	"Increases building health and kit damage. Increases metal regen by +8.\nGrants +5 support buildings and reduces Tinker cooldown by 30s.\nAdds a chance for Tier 3 effects."
-		"es"	"Incrementa la vida de las construcciones y el daño del kit. Aumenta la regeneracion de metal en un +8.\nOtorga +5 construcciones de soporte y reduce el cooldown del yunque en 30s.\nAhora puedes sacar sets de atributos de Tier 3!"
+		"en"	"+70％ Building Health, +181.25％ Weapon Damage, +8 Metal Regen, +5 Support Buildings, and -20s Tinker Cooldown.\nAdds a chance for Tier 3 effects.\nReduces Metal drain(cant go below 1)"
 	}
 	"Tinker Pap 4 Desc"
 	{
-		"en"	"Increases building health and kit damage. Increases metal regen by +10.\nReduces Tinker cooldown by 30s."
-		"es"	"Incrementa la vida de las construcciones y el daño del kit. Aumenta la regeneracion de metal en un +10.\nReduce el cooldown del yunque en 30s."
+		"en"	"+40％ Building Health, +181.25％ Weapon Damage, +10 Metal Regen, and -20s Tinker Cooldown.\nReduces Metal drain(cant go below 1)"
 	}
 	"Tinker Pap 5 Desc"
 	{
-		"en"	"Increases kit damage. Increases metal regen by +15.\nReduces Tinker cooldown by 30s."
-		"es"	"Incrementa el daño del kit. Aumenta la regeneracion de metal en un +15.\nReduce el cooldown del yunque en 30s."
+		"en"	"+160％ Weapon Damage, +15 Metal Regen, and -20s Tinker Cooldown.\nReduces Metal drain(cant go below 1)"
 	}
 	"Tinker Pap 6 Desc"
 	{
-		"en"	"Increases building health and kit damage.\nGrants +1 support building and reduces Tinker cooldown by 30s."
-		"es"	"Incrementa la vida de las construcciones y el daño del kit.\nOtorga +1 construccion de soporte y reduce el cooldown del yunque en 30s."
+		"en"	"+70％ Building Health, +250％ Weapon Damage, +1 Support Building, and -20s Tinker Cooldown.\nReduces Metal drain(cant go below 1)"
 	}
 	"West Pap 1 Desc"
 	{
@@ -4226,11 +4232,11 @@
 	}
 	"Magia Fractal Desc"
 	{
-		"en"	"Primary:\nM1:enter an animation where you shoot a big laser of doom.\nHold M2: Increase distance, faster turn speed. uses 10 crystals/s \nSecondary:\nM1: Harvester, gain mana on targets hit.\nM2: Summon an Ion that bounces\nMelee:\nM1: Energy Wave. Costs Crystals. On hit gain crystals\nTwirl's Hairpints give 25 extra crystals"
+		"en"	"Primary:\nM1:enter an animation where you shoot a big laser of doom.\nHold M2: Increase distance, faster turn speed. uses 10 crystals/s and does 10%% more damage \nSecondary:\nM1: Harvester, gain mana on targets hit.\nM2: Summon an Ion that bounces\nMelee:\nM1: Energy Wave. Costs Crystals. On hit gain crystals"
 	}
 	"Fractal Kit Desc 1"
 	{
-		"en"	"More Damage! And crystal capacity."
+		"en"	"More Damage! And crystal capacity. Lower StarFall Cooldown."
 	}
 	"WPrototype Kit Desc"
 	{
@@ -4494,7 +4500,7 @@
 	}
 	"Plasminator Pap 2 Desc"
 	{
-		"en"	"Unlocks Plasmic Burst, which shoots a short-ranged Plasmic laser.\nPlasmic Burst deals AoE damage and inflicts 35%% of its damage as Plasmic Elemental damage."
+		"en"	"Unlocks Plasmic Burst, which shoots a short-ranged Plasmic laser.\nPlasmic Burst deals AoE damage and inflicts 35％ of its damage as Plasmic Elemental damage."
 	}
 	"Plasminator Pap 3 Desc"
 	{
@@ -4503,5 +4509,33 @@
 	"Plasminator Pap 4 Desc"
 	{
 		"en"	"Increases overall stats.\nSlightly increases Plasmic Burst's range, plasmic elemental damage and reduces its cooldown."
+	}
+	"Chemical Spewer Desc"
+	{
+		"en"	"A flamethrower that scales with building upgrades.\nInflicts Nervous Impairment elemental damage equal to 50％ of damage dealt.\nApplies afterburn that deals Magic damage."
+	}
+	"Chemical Spewer Pap 1"
+	{
+		"en"	"Base damage is increased, consumes less ammo."
+	}
+	"The Ritualist Desc"
+	{
+		"en"	"A simple mage weapon that can be upgraded to inflict elemental damage.\nOnce enough elemental damage is applied to a target, an effect happens with a cooldown.\nIts necrosis damage is Magic damage."
+	}
+	"Necrosis Ritualist Desc"
+	{
+		"en"	"Up to 4 enemies within range take Necrosis elemental damage every second and take increased Necrosis elemental damage.\nBeing in a taunt increases Necrosis elemental damage dealt through this."
+	}
+	"Necrosis Ritualist Pap Desc"
+	{
+		"en"	"Damage increased, passive effect can now hit up to 6 enemies within range.\nAbility increases damage heavily and buffs 3 allies within range for a long duration."
+	}
+	"Impairment Ritualist Desc"
+	{
+		"en"	"Attacks now inflict Nervous Impairment in a splash radius, hitting up to 4 enemies."
+	}
+	"Impairment Ritualist Pap Desc"
+	{
+		"en"	"Damage and attack speed increased, splash damage can now hit up to 6 enemies.\nAbility spawns a summon that on death will explode, inflicting bleeding and Nervous Impairment."
 	}
 }
