@@ -220,12 +220,13 @@ enum
 	WEAPON_TORNADO_BLITZ = 143,
 	WEAPON_BUFFPOTION = 144,
 	WEAPON_REIUJI_WAND = 145,
-	//WEAPON_CHEESY_MELEE = 146,
-	//WEAPON_CHEESY_PRIMARY = 147,
+	WEAPON_CHEESY_MELEE = 146,
+	WEAPON_CHEESY_PRIMARY = 147,
 	WEAPON_CHEMICAL_THROWER = 148,
 	WEAPON_RITUALIST = 149,
 	WEAPON_SHERRIF = 150,
-	WEAPON_SHERRIF_LEVERACTION = 151
+	WEAPON_SHERRIF_LEVERACTION = 151,
+	WEAPON_CHEESY_SECONDARY = 152
 }
 
 enum
@@ -698,6 +699,7 @@ void ZR_PluginStart()
 	Object_PluginStart();
 	SteamWorks_PluginStart();
 	Vehicle_PluginStart();
+	Kritzkrieg_PluginStart();
 	Format(WhatDifficultySetting_Internal, sizeof(WhatDifficultySetting_Internal), "%s", "No Difficulty Selected Yet");
 	Format(WhatDifficultySetting, sizeof(WhatDifficultySetting), "%s", "No Difficulty Selected Yet");
 	
@@ -712,6 +714,7 @@ void ZR_PluginStart()
 	}
 	
 	BobTheGod_OnPluginStart();
+	VIPBuilding_PluginStart();
 }
 
 void ZR_MapStart()
@@ -1300,7 +1303,7 @@ public Action CommandDebugHudTest(int client, int args)
 	//What are you.
 	if(args < 1)
     {
-        ReplyToCommand(client, "[SM] Usage: wat <cash>");
+        ReplyToCommand(client, "[SM] Usage: sm_displayhud <number>");
         return Plugin_Handled;
     }
 
@@ -1309,6 +1312,12 @@ public Action CommandDebugHudTest(int client, int args)
 	DoGlobalMultiScaling();
 	float ScalingTestDo = GetScaledPlayerCountMulti(Number);
 	PrintToChatAll("ScalingTestDo %f",ScalingTestDo);
+	int entity, i;
+	while(TF2U_GetWearable(client, entity, i))
+	{
+		SetTeam(entity, 2);
+		SetEntProp(entity, Prop_Send, "m_nSkin", Number);
+	}	
 	return Plugin_Handled;
 }
 
@@ -2095,7 +2104,7 @@ void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = 
 						/*
 						if(Is_Cheesed_Up(client))
 						{
-							CPrintToChatAll("{darkviolet}%N decides to Plasmify himself as a last resort...", client);
+							CPrintToChatAll("{darkviolet}%N decides to inject himself with plasma as a last resort...", client);
 							Yakuza_Lastman(11);
 						}
 						*/
