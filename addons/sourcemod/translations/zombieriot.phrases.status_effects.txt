@@ -1349,7 +1349,7 @@
 	}
 	"Plasm I Desc"
 	{
-		"en"	"Slows NPCs by 8％.\nReduces attackspeed by 8％.\n{yellow}TIP: Stacking this debuff makes it stronger!"
+		"en"	"Slows NPCs by 8％.\nReduces attackspeed by 8％\nIncreases damage taken by 8％.\n{yellow}TIP: Stacking this debuff makes it stronger!"
 	}
 	"Plasm II"
 	{
@@ -1357,7 +1357,7 @@
 	}
 	"Plasm II Desc"
 	{
-		"en" 	"Slows NPCs by 12％.\nReduces attackspeed by 12％."
+		"en" 	"Slows NPCs by 12％.\nReduces attackspeed by 12％.\nIncreases damage taken by 12％."
 	}
 	"Plasm III"
 	{
@@ -1365,7 +1365,7 @@
 	}
 	"Plasm III Desc"
 	{
-		"en" 	"Slows NPCs by 16％.\nReduces attackspeed by 16％."
+		"en" 	"Slows NPCs by 16％.\nReduces attackspeed by 16％.\nIncreases damage taken by 16％."
 	}
 	"Plasmatic Rampage"
 	{
@@ -1373,7 +1373,7 @@
 	}
 	"Plasmatic Rampage Desc"
 	{
-		"en" 	"{darkviolet}Enveloped in plasma...\n{green}Boost damage dealt and resist +15％.\nBoosts attackspeed by +25％\n{darkviolet}Ability cooldowns are reduced, gain extra static regen below 25％ HP."
+		"en" 	"Boosts damage dealt, resistance and attackspeed by +30％.\nAbility cooldowns are halved, gain extra static regen below 25％ HP.\n{darkviolet}However, plasma slowly engulfs your body overtime..."
 	}
 	"Plasmatized Lethalitation"
 	{
@@ -1381,7 +1381,7 @@
 	}
 	"Plasmatized Lethalitation Desc"
 	{
-		"en" 	"Your next hit will deal more damage, and inflict more Plasmic Elemental Damage.\nAbility recieves more boosts based on pap level.\n{red}Buff is removed and the ability is put on cooldown after landing a hit."
+		"en" 	"Your next hit will deal more damage, and inflict MASSIVE Plasmic Elemental Damage.\nAbility recieves more boosts based on pap level.\n{red}Buff is removed and the ability is put on cooldown after landing a hit."
 	}
 	"Ziberian Flagship Weaponry"
 	{
