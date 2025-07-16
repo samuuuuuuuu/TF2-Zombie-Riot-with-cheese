@@ -936,7 +936,6 @@ int Store_CycleItems(int client, int slot, bool ChangeWeapon = true)
 	int topWeapon = -1;
 	int firstWeapon = -1;
 	int previousIndex = -1;
-
 	int length = GetMaxWeapons(client);
 	for(int i; i < length; i++)
 	{
@@ -5068,6 +5067,7 @@ void Store_ApplyAttribs(int client)
 		map.SetValue("820", 1.0);
 		map.SetValue("821", 1.0);
 		map.SetValue("107", 0.001);
+		map.SetValue("698", 1.0);
 		//try prevent.
 	}
 	else

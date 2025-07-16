@@ -252,9 +252,16 @@ float ZRModifs_SpawnSpeedModif()
 
 	if(!Classic_Mode())
 	{
-		value *= ((float(EnemyNpcAlive) / float(MaxEnemiesAllowedSpawnNext())) * 2.0);
+		value *= ((float(EnemyNpcAlive) / float(MaxEnemiesAllowedSpawnNext())) * 2.25);
 		if(!VIPBuilding_Active())
-			value *= 0.5;
+		{
+			value *= 0.75;
+		}
+		if(Construction_Mode())
+		{
+			value *= 0.65;
+			//spawn much faster in construction.
+		}
 		//just spawn much faster.
 	}
 
