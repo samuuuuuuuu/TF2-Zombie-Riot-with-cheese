@@ -882,6 +882,20 @@ public void Weapon_Kit_Cheddinator_FireInternal(DataPack DataDo)
 
 	int projectile = Wand_Projectile_Spawn(client, speed, time, damage, 0, weapon, particle);
 	WandProjectile_ApplyFunctionToEntity(projectile, Cheese_ProjectileTouch);
+	/*
+	// NOTE: this is just for testing and checking since the one in bvb is the 'same'
+	// and replicating the homing itself is ass because it uses zr stuff alongside it
+	float Angles[3];
+	GetClientEyeAngles(client, Angles);
+	Initiate_HomingProjectile(projectile, 
+			client,
+			15.0,	// Maximum angle lock
+			5.0,	// Homing per sec
+			false, // If to lock on the target only once or not.
+			true,	// Change angles?
+			Angles, // Angles.
+			-1); // Homing target
+	*/
 }
 
 static void Cheese_Burst(int client, float dmgclose, float dmgfar, float maxdist, float beamradius, int weapon)
