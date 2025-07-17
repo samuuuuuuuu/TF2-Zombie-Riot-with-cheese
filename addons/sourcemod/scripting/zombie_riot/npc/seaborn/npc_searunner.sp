@@ -98,6 +98,11 @@ methodmap SeaRunner < CSeaBody
 		func_NPCDeath[npc.index] = SeaRunner_NPCDeath;
 		func_NPCOnTakeDamage[npc.index] = SeaRunner_OnTakeDamage;
 		func_NPCThink[npc.index] = SeaRunner_ClotThink;
+
+		if(StrContains(data, "lamarr") != -1)
+		{
+			strcopy(npc.CustomName, sizeof(npc.CustomName), "Lamarr");
+		}
 		
 		npc.m_flSpeed = data[0] ? 475.0 : 330.0;	// 1.9 x 250
 		npc.m_flGetClosestTargetTime = 0.0;
