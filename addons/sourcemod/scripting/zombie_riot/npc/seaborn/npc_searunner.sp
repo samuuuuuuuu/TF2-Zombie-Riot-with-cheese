@@ -101,7 +101,7 @@ methodmap SeaRunner < CSeaBody
 
 		if(StrContains(data, "lamarr") != -1)
 		{
-			strcopy(npc.CustomName, sizeof(npc.CustomName), "Lamarr");
+			strcopy(c_NpcName[npc.index], sizeof(c_NpcName[]), "Lamarr");
 		}
 		
 		npc.m_flSpeed = data[0] ? 475.0 : 330.0;	// 1.9 x 250
