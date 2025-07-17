@@ -4337,4 +4337,8 @@
 		"en"	"Once full, your body's plasma will break down, weakening your body.\n(PLAYERS ONLY) You take 10％ of your max health as true damage and recieve more damage temporarily.\nYou trigger an AoE effect that heals nearby enemies."
 		"es"	"Cuando se llena, el plasma de tu cuerpo se rompera, debilitandote.\n(SOLO JUGADORES) Recibes un 10％ de tu vida maxima como daño verdadero y te vuelves mas vulnerable temporalmente.\nActivas un efecto de curacion en area que cura a enemigos cercanos."
 	}
+	"Lamarr"
+	{
+		"en" "Lamarr"
+	}
 }
