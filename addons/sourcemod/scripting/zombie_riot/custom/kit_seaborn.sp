@@ -228,7 +228,7 @@ public void Weapon_SeaRange_M2(int client, int weapon, bool crit, int slot)
 		int entity = -1;
 		char kleiner[128];
 		GetClientModel(client, kleiner, sizeof(kleiner));
-		if(StrEqual(kleiner, "models/zombie_riot/player_model_add/model_player_2_1.mdl"))
+		if(!StrContains(kleiner, "model_player_2_1", false))
 		{
 			entity = NPC_CreateByName("npc_searunner", client, pos1, ang, TFTeam_Red, "lamarr");
 		}
