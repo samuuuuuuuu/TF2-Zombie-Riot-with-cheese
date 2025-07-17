@@ -225,7 +225,18 @@ public void Weapon_SeaRange_M2(int client, int weapon, bool crit, int slot)
 		
 	for(int i; i < SpawnMaxEnemies; i++)
 	{
-		int entity = NPC_CreateByName("npc_searunner", client, pos1, ang, TFTeam_Red);
+		int entity = -1;
+		char kleiner[128];
+		GetClientModel(client, kleiner, sizeof(kleiner));
+		if(StrEqual(kleiner, "models/zombie_riot/player_model_add/model_player_2_1.mdl"))
+		{
+			entity = NPC_CreateByName("npc_searunner", client, pos1, ang, TFTeam_Red, "lamarr");
+		}
+		else
+		{
+			entity = NPC_CreateByName("npc_searunner", client, pos1, ang, TFTeam_Red);
+		}
+
 		if(entity > MaxClients)
 		{
 			fl_Extra_Damage[entity] = Attributes_Get(weapon, 2, 1.0);
