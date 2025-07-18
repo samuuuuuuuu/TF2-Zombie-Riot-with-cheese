@@ -98,6 +98,11 @@ methodmap SeaRunner < CSeaBody
 		func_NPCDeath[npc.index] = SeaRunner_NPCDeath;
 		func_NPCOnTakeDamage[npc.index] = SeaRunner_OnTakeDamage;
 		func_NPCThink[npc.index] = SeaRunner_ClotThink;
+
+		if(StrContains(data, "lamarr") != -1)
+		{
+			strcopy(c_NpcName[npc.index], sizeof(c_NpcName[]), "Lamarr");
+		}
 		
 		npc.m_flSpeed = data[0] ? 475.0 : 330.0;	// 1.9 x 250
 		npc.m_flGetClosestTargetTime = 0.0;
@@ -105,7 +110,6 @@ methodmap SeaRunner < CSeaBody
 		npc.m_flAttackHappens = 0.0;
 		f_ExtraOffsetNpcHudAbove[npc.index] = -65.0;
 		
-		SetEntityRenderMode(npc.index, RENDER_TRANSCOLOR);
 		SetEntityRenderColor(npc.index, 50, 50, 255, 255);
 		return npc;
 	}
