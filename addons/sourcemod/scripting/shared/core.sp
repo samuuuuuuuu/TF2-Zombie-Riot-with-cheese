@@ -104,6 +104,14 @@ ConVar CvarAutoSelectWave;
 ConVar CvarCustomModels;
 ConVar CvarFileNetworkDisable;
 
+enum
+{
+	FILENETWORK_ENABLED = 0,
+	FILENETWORK_ICONONLY = 1,
+	FILENETWORK_DISABLED = 2,
+
+}
+
 ConVar CvarDisableThink;
 //ConVar CvarMaxBotsForKillfeed;
 ConVar CvarRerouteToIp;
@@ -174,9 +182,9 @@ bool b_MarkForReload = false; //When you wanna reload the plugin on map change..
 #define COMBINE_CUSTOM_MODEL 		"models/zombie_riot/combine_attachment_police_228.mdl"
 
 //model uses self made IK rigs, to not break the top stuff.
-#define COMBINE_CUSTOM_2_MODEL 		"models/zombie_riot/combine_attachment_police_secondmodel_18.mdl"
+#define COMBINE_CUSTOM_2_MODEL 		"models/zombie_riot/combine_attachment_police_secondmodel_22.mdl"
 
-#define WEAPON_CUSTOM_WEAPONRY_1 	"models/zombie_riot/weapons/custom_weaponry_1_51.mdl"
+#define WEAPON_CUSTOM_WEAPONRY_1 	"models/zombie_riot/weapons/custom_weaponry_1_52.mdl"
 /*
 	1 - sensal scythe
 	2 - scythe_throw

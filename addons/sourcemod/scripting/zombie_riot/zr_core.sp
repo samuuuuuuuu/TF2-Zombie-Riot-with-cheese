@@ -336,6 +336,9 @@ float Resistance_for_building_High[MAXENTITIES];
 MusicEnum MusicString1;
 MusicEnum MusicString2;
 MusicEnum MusicSetup1;
+MusicEnum MusicLastmann;
+MusicEnum MusicWin;
+MusicEnum MusicLoss;
 MusicEnum RaidMusicSpecial1;
 MusicEnum BGMusicSpecial1;
 //custom wave music.
@@ -725,7 +728,13 @@ void ZR_PluginStart()
 
 void ZR_MapStart()
 {
+	MusicString1.Clear();
+	MusicString2.Clear();
 	MusicSetup1.Clear();
+	MusicLastmann.Clear();
+	MusicWin.Clear();
+	MusicLoss.Clear();
+	RaidMusicSpecial1.Clear();
 	PrecacheSound("ui/hitsound_electro1.wav");
 	PrecacheSound("ui/hitsound_electro2.wav");
 	PrecacheSound("ui/hitsound_electro3.wav");
@@ -1887,7 +1896,7 @@ void CheckLastMannStanding(int killed)
 		LastMann_BeforeLastman = true;
 	}
 }
-void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = false)
+void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = false, int CheckForLastManAlone = 0)
 {
 	if(!Waves_Started() || Waves_InSetup() || GameRules_GetRoundState() != RoundState_ZombieRiot)
 	{
@@ -1961,9 +1970,13 @@ void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = 
 	*/
 	if(LastMann && !GlobalIntencity_Reduntant) //Make sure if they are alone, it wont play last man music.
 	{
-		PlayersLeftNotDowned = 99;
-		LastMann_BeforeLastman = false;
-		LastMann = false;
+		//if its above 700, it just assumes we triggered lastman
+		if(i_AmountDowned[CheckForLastManAlone] < 700)
+		{
+			PlayersLeftNotDowned = 99;
+			LastMann_BeforeLastman = false;
+			LastMann = false;
+		}
 	}
 
 	if(PlayersLeftNotDowned == 1)
@@ -2144,9 +2157,16 @@ void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = 
 						applied_lastmann_buffs_once = true;
 						
 						SetHudTextParams(-1.0, -1.0, 3.0, 255, 0, 0, 255);
-						ShowHudText(client, -1, "%T", "Last Alive", client);
+						if(b_IsAloneOnServer)
+							ShowHudText(client, -1, "%T", "Last Alive Alone", client);
+						else
+							ShowHudText(client, -1, "%T", "Last Alive", client);
+
 						int MaxHealth;
 						MaxHealth = SDKCall_GetMaxHealth(client) * 2;
+						if(b_IsAloneOnServer)
+							MaxHealth /= 2;
+							
 						if(i_HealthBeforeSuit[client] == 0)
 						{
 							SetEntProp(client, Prop_Send, "m_iHealth", MaxHealth);
@@ -2154,6 +2174,8 @@ void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = 
 						//if in quantum suit, dont.
 
 						int Armor_Max = MaxArmorCalculation(Armor_Level[client], client, 1.0);
+						if(b_IsAloneOnServer)
+							Armor_Max /= 2;
 
 						Armor_Charge[client] = Armor_Max;
 						GiveCompleteInvul(client, 3.0);
@@ -3002,6 +3024,7 @@ bool PlayerIsInNpcBattle(int client, float ExtradelayTime = 0.0)
 
 void ForcePlayerWin(bool fakeout = false)
 {
+	bool PlayNormalMusic = false;
 	for(int client = 1; client <= MaxClients; client++)
 	{
 		if(!b_IsPlayerABot[client] && IsClientInGame(client) && !IsFakeClient(client))
@@ -3010,6 +3033,8 @@ void ForcePlayerWin(bool fakeout = false)
 			SetMusicTimer(client, GetTime() + 33);
 			SendConVarValue(client, sv_cheats, "1");
 			Convars_FixClientsideIssues(client);
+			if(MusicWin.PlayMusic(client))
+				PlayNormalMusic = false;
 		}
 	}
 	if(!fakeout)
@@ -3017,16 +3042,19 @@ void ForcePlayerWin(bool fakeout = false)
 
 	cvarTimeScale.SetFloat(0.1);
 	CreateTimer(0.5, SetTimeBack);
-	
-	MusicString1.Clear();
-	MusicString2.Clear();
-	MusicSetup1.Clear();
-	RaidMusicSpecial1.Clear();
+	if(PlayNormalMusic)
+		EmitCustomToAll("#zombiesurvival/music_win_1.mp3", _, SNDCHAN_STATIC, SNDLEVEL_NONE, _, 2.0);
 
-	EmitCustomToAll("#zombiesurvival/music_win_1.mp3", _, SNDCHAN_STATIC, SNDLEVEL_NONE, _, 2.0);
 
 	if(!fakeout)
 	{
+		MusicString1.Clear();
+		MusicString2.Clear();
+		MusicSetup1.Clear();
+		MusicLastmann.Clear();
+		MusicWin.Clear();
+		MusicLoss.Clear();
+		RaidMusicSpecial1.Clear();
 		MVMHud_Disable();
 		int entity = CreateEntityByName("game_round_win"); 
 		DispatchKeyValue(entity, "force_map_reset", "1");
@@ -3067,6 +3095,14 @@ void ForcePlayerLoss(bool WasRaid = true)
 	Music_RoundEnd(entity);
 	RaidBossActive = INVALID_ENT_REFERENCE;
 	Native_ZR_OnWinTeam(TFTeam_Blue);
+	
+	MusicString1.Clear();
+	MusicString2.Clear();
+	MusicSetup1.Clear();
+	MusicLastmann.Clear();
+	MusicWin.Clear();
+	MusicLoss.Clear();
+	RaidMusicSpecial1.Clear();
 }
 
 
