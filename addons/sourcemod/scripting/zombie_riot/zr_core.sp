@@ -1061,6 +1061,7 @@ public Action GlobalTimer(Handle timer)
 
 void ZR_ClientPutInServer(int client)
 {
+	b_HasBeenHereSinceStartOfWave[client] = false;
 	Queue_PutInServer(client);
 	i_AmountDowned[client] = 0;
 	if(CurrentModifOn() == 3)
@@ -1098,6 +1099,12 @@ void ZR_ClientPutInServer(int client)
 		}
 	}
 	CheckAllClientPrefs(client);
+
+	//if someone joints mid waves, make them buy atleast 70% of the cash before being allowed to play.
+	if(!Waves_Started())
+		b_AntiLateSpawn_Allow[client] = true;
+	else
+		b_AntiLateSpawn_Allow[client] = false;
 }
 
 void ZR_ClientDisconnect(int client)
@@ -1908,6 +1915,8 @@ void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = 
 		{
 			if(IsClientInGame(client) && GetClientTeam(client)==2 && !IsFakeClient(client) && TeutonType[client] != TEUTON_WAITING)
 			{
+				if(!b_AntiLateSpawn_Allow[client])
+					continue;
 				CurrentPlayers++;
 			}
 		}
@@ -1928,6 +1937,8 @@ void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = 
 	{
 		if(IsClientInGame(client) && GetClientTeam(client)==2 && !IsFakeClient(client) && TeutonType[client] != TEUTON_WAITING)
 		{
+			if(!b_AntiLateSpawn_Allow[client])
+				continue;
 			CurrentPlayers++;
 			if(killed != client && IsPlayerAlive(client) && TeutonType[client] == TEUTON_NONE/* && dieingstate[client] == 0*/)
 			{
@@ -1999,6 +2010,8 @@ void CheckAlivePlayers(int killed=0, int Hurtviasdkhook = 0, bool TestLastman = 
 			Died[client] = false;
 			if(IsClientInGame(client) && GetClientTeam(client)==2 && !IsFakeClient(client) && TeutonType[client] != TEUTON_WAITING)
 			{
+				if(!b_AntiLateSpawn_Allow[client])
+					continue;
 				if((killed != client || Hurtviasdkhook != client) && IsPlayerAlive(client) && TeutonType[client] == TEUTON_NONE && dieingstate[client] > 0)
 				{
 					Died[client] = true;
@@ -2620,6 +2633,9 @@ void ReviveAll(bool raidspawned = false, bool setmusicfalse = false)
 			DoOverlay(client, "", 2);
 			if(GetClientTeam(client)==2)
 			{
+				if(!b_AntiLateSpawn_Allow[client])
+					continue;
+					
 				if(TeutonType[client] != TEUTON_WAITING)
 				{
 					b_HasBeenHereSinceStartOfWave[client] = true;
