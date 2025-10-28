@@ -121,6 +121,7 @@ public void OnRoundStart(Event event, const char[] name, bool dontBroadcast)
 	{
 		Armor_Charge[client] = 0; //reset armor to 0
 	}
+	ReviveAll();
 	if(RoundStartTime > GetGameTime())
 	{
 		//This asumes it already picked a map, get loadouts while not redoing map logic!
@@ -347,6 +348,11 @@ public void OnPlayerResupply(Event event, const char[] name, bool dontBroadcast)
 	   		int weapon_index = Store_GiveSpecificItem(client, "Teutonic Longsword");
 			SetVariantInt(0);
 			AcceptEntityInput(client, "SetBodyGroup");
+			if(!b_HasBeenHereSinceStartOfWave[client])
+			{
+				SetEntPropFloat(client, Prop_Send, "m_flNextAttack", FAR_FUTURE);
+				SetEntPropFloat(weapon_index, Prop_Send, "m_flNextPrimaryAttack", FAR_FUTURE);
+			}
 			//apply model correctly.
 
 

@@ -1480,6 +1480,8 @@ public int Store_PackMenuH(Menu menu, MenuAction action, int client, int choice)
 						owner = EntRefToEntIndex(values[2]);
 						if(IsValidClient(owner))
 							Building_GiveRewardsUse(client, owner, 150, true, 4.0, true);
+							
+						CheckClientLateJoin(client);
 					}
 				}
 				
@@ -3082,7 +3084,7 @@ void CheckClientLateJoin(int client)
 	{
 		//they joined late, make sure they buy something.
 
-		int CashUsedMust = RoundToNearest(float(CurrentCash) * 0.6);
+		int CashUsedMust = RoundToNearest(float(CurrentCash) * 0.5);
 		if(CashUsedMust >= 40000)
 		{
 			//if they spend atleast 40k, allow at all times, this is beacuse there are sometimes wavesets
@@ -3091,7 +3093,7 @@ void CheckClientLateJoin(int client)
 		}
 
 		//enough cash was thrown away.
-		if(CashSpent[client] >= CashUsedMust)
+		if(CashSpentTotal[client] >= CashUsedMust)
 		{
 			b_AntiLateSpawn_Allow[client] = true;
 			//allow them to play.
@@ -5408,7 +5410,6 @@ void Store_GiveAll(int client, int health, bool removeWeapons = false)
 
 void Store_GiveAllInternal(int client, int health, bool removeWeapons = false)
 {
-	b_HasBeenHereSinceStartOfWave[client] = false;
 	TF2_RemoveCondition(client, TFCond_Taunting);
 	PreMedigunCheckAntiCrash(client);
 	if(!StoreItems)
@@ -5431,8 +5432,6 @@ void Store_GiveAllInternal(int client, int health, bool removeWeapons = false)
 
 	if(removeWeapons)
 	{
-		if(TeutonType[client] == TEUTON_NONE)
-			b_HasBeenHereSinceStartOfWave[client] = true; //If they arent a teuton!
 		TF2_RegeneratePlayer(client);
 		Manual_Impulse_101(client, health);
 		return;
@@ -5447,7 +5446,6 @@ void Store_GiveAllInternal(int client, int health, bool removeWeapons = false)
 	{
 		Store_RemoveSpecificItem(client, "Teutonic Longsword", false);
 	}
-	b_HasBeenHereSinceStartOfWave[client] = true; //If they arent a teuton!
 	//OverridePlayerModel(client);
 	//stickies can stay, we delete any non spike stickies.
 	for( int i = 1; i <= MAXENTITIES; i++ ) 
@@ -6619,6 +6617,11 @@ static void ItemCost(int client, Item item, int &cost)
 		{
 			cost = RoundToCeil(float(cost) * 0.7);
 		}
+		return;
+	}
+	if(!b_AntiLateSpawn_Allow[client])
+	{
+		//if they are joining late, give them no sales.
 		return;
 	}
 		
