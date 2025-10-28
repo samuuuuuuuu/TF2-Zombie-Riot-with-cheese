@@ -92,10 +92,21 @@ public void Construction_Raid_Zilius_OnMapStart()
 	data.Category = Type_Raid;
 	data.Func = ClotSummon;
 	data.Precache = Zilius_TBB_Precahce;
+	data.Precache_data = Zilius_ModelPrecache;
 	NPC_Add(data);
 }
 
+void Zilius_ModelPrecache(const char[] data)
+{
+	bool forceprecache = !StrContains(data, "forceprecache");
+	if(Construction_Mode())
+		forceprecache = true;
 
+	if(forceprecache)
+	{
+		PrecacheModel("models/zombie_riot/special_boss/zilius_1.mdl");
+	}
+}
 
 void Zilius_TBB_Precahce()
 {
@@ -120,9 +131,6 @@ void Zilius_TBB_Precahce()
 	PrecacheSound("weapons/cow_mangler_explosion_normal_05.wav");
 	PrecacheSound("weapons/cow_mangler_explosion_normal_06.wav");
 	PrecacheSoundCustom("#zombiesurvival/construct/bat_prtsstage1.mp3");
-	
-	if(Construction_Mode())
-		PrecacheModel("models/zombie_riot/special_boss/zilius_1.mdl");
 
 	PrecacheSound("mvm/mvm_cpoint_klaxon.wav");
 	PrecacheSound("mvm/mvm_tank_start.wav");
@@ -865,7 +873,20 @@ static void Internal_NPCDeath(int entity)
 		if(IsValidClient(EnemyLoop))
 		{
 			ResetDamageHud(EnemyLoop);//show nothing so the damage hud goes away so the other raid can take priority faster.
-		}				
+		}
+
+		if(!Construction_Mode()) // Kill any freed zeinas that exist on death, might need something later if you need to kill only the freed zeina that this zilius has.
+		{
+			if(IsValidEntity(EnemyLoop) && !b_NpcHasDied[EnemyLoop] && GetTeam(EnemyLoop) != GetTeam(npc.index))
+			{
+				char name[32];
+				NPC_GetPluginById(i_NpcInternalId[EnemyLoop], name, sizeof(name));
+				if(!StrContains(name, "npc_zeinafree"))
+				{
+					SmiteNpcToDeath(EnemyLoop);
+				}
+			}
+		}
 	}
 	Citizen_MiniBossDeath(entity);
 }
