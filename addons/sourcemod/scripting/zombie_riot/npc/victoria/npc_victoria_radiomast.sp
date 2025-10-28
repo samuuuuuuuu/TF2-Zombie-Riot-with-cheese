@@ -204,192 +204,195 @@ public void VictoriaRadiomast_ClotThink(int iNPC)
 			}
 		}
 	}
-		
-	if(Waves_IsEmpty() && npc.m_flNextMeleeAttack < gameTime)
+
+	if(!Waves_InFreeplay())
 	{
-		int ISVOLI= 1;
-		ISVOLI = RoundToNearest(4.0); 
-		int VICTORIA= 1;
-		VICTORIA = RoundToNearest(float(CountPlayersOnRed(1)) * 1.0); 
-		for(int i=1; i<=VICTORIA; i++)
+		if(Waves_IsEmpty() && npc.m_flNextMeleeAttack < gameTime)
 		{
-			switch(GetRandomInt(1, 4))
+			int ISVOLI= 1;
+			ISVOLI = RoundToNearest(4.0); 
+			int VICTORIA= 1;
+			VICTORIA = RoundToNearest(float(CountPlayersOnRed(1)) * 1.0); 
+			for(int i=1; i<=VICTORIA; i++)
 			{
-				case 1:
+				switch(GetRandomInt(1, 4))
 				{
-					for(int ii=1; ii<=ISVOLI; ii++)
+					case 1:
 					{
-						switch(GetRandomInt(1, 8))
+						for(int ii=1; ii<=ISVOLI; ii++)
 						{
-							case 1:
+							switch(GetRandomInt(1, 8))
 							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_batter",30000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 2:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_charger",35000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 3:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_teslar",35000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}	
-							case 4:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_victorian_vanguard",35000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 5:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_supplier",30000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 6:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_ballista",30000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 7:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_grenadier",30000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 8:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_igniter",120000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								case 1:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_batter",30000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 2:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_charger",35000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 3:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_teslar",35000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}	
+								case 4:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_victorian_vanguard",35000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 5:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_supplier",30000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 6:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_ballista",30000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 7:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_grenadier",30000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 8:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_igniter",120000,3.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
 							}
 						}
 					}
-				}
-				case 2:
-				{
-					for(int ii=1; ii<=ISVOLI; ii++)
+					case 2:
 					{
-						switch(GetRandomInt(1, 9))
+						for(int ii=1; ii<=ISVOLI; ii++)
 						{
-							case 1:
+							switch(GetRandomInt(1, 9))
 							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_humbee",120000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 2:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_shotgunner",30000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 3:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_bulldozer",120000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}	
-							case 4:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_hardener",30000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 5:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_raider",30000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 6:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_zapper",35000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 7:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_payback",120000,2.25, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 8:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_blocker",35000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 9:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_destructor",35000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								case 1:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_humbee",120000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 2:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_shotgunner",30000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 3:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_bulldozer",120000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}	
+								case 4:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_hardener",30000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 5:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_raider",30000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 6:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_zapper",35000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 7:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_payback",120000,2.25, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 8:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_blocker",35000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 9:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_destructor",35000,2.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
 							}
 						}
 					}
-				}
-				case 3:
-				{
-					for(int ii=1; ii<=ISVOLI; ii++)
+					case 3:
 					{
-						switch(GetRandomInt(1, 9))
+						for(int ii=1; ii<=ISVOLI; ii++)
 						{
-							case 1:
+							switch(GetRandomInt(1, 9))
 							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_basebreaker",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 2:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_booster",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 3:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_scorcher",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}	
-							case 4:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_mowdown",150000,1.3, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 5:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_mechafist",45000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 6:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_assaulter",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 7:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_antiarmor_infantry",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 8:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_mortar",40000,1.3, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 9:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_breachcart",160000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
+								case 1:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_basebreaker",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 2:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_booster",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 3:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_scorcher",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}	
+								case 4:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_mowdown",150000,1.3, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 5:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_mechafist",45000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 6:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_assaulter",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 7:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_antiarmor_infantry",40000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 8:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_mortar",40000,1.3, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 9:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_breachcart",160000,1.2, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
 							}
 						}
 					}
-				}
-				case 4:
-				{
-					for(int ii=1; ii<=ISVOLI; ii++)
+					case 4:
 					{
-						switch(GetRandomInt(1, 8))
+						for(int ii=1; ii<=ISVOLI; ii++)
 						{
-							case 1:
+							switch(GetRandomInt(1, 8))
 							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_caffeinator",40000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 2:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_welder",45000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 3:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_mechanist",50000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}	
-							case 4:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_tanker",45000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 5:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_pulverizer",40000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 6:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_ambusher",40000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 7:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_taser",40000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
-							}
-							case 8:
-							{
-								VictoriaRadiomastSpawnEnemy(npc.index,"npc_victorian_tank",250000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								case 1:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_caffeinator",40000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 2:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_welder",45000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 3:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_mechanist",50000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}	
+								case 4:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_tanker",45000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 5:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_pulverizer",40000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 6:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_ambusher",40000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 7:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_taser",40000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
+								case 8:
+								{
+									VictoriaRadiomastSpawnEnemy(npc.index,"npc_victorian_tank",250000,1.0, RoundToCeil(4.0 * MultiGlobalEnemy));
+								}
 							}
 						}
 					}
 				}
 			}
+			npc.m_flNextMeleeAttack = gameTime+InfiniteWave;
 		}
-		npc.m_flNextMeleeAttack = gameTime+InfiniteWave;
 	}
 
 	for(int i; i < i_MaxcountNpcTotal; i++)
