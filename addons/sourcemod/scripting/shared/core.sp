@@ -38,6 +38,7 @@
 #define TFTeam_Spectator 	1
 #define TFTeam_Red 		2
 #define TFTeam_Blue		3
+
 #define TFTeam_Stalkers 		5
 
 #define TF2_GetClientTeam	PleaseUse_GetTeam
@@ -688,6 +689,10 @@ int OriginalWeapon_AmmoType[MAXENTITIES];
 #include "npccamera.sp"
 #endif
 
+#if defined ZR
+#include "rtscamera.sp"
+#endif
+
 #include "baseboss_lagcompensation.sp"
 #include "configs.sp"
 #include "damage.sp"
@@ -928,6 +933,10 @@ public void OnPluginEnd()
 	}
 
 	
+#if defined RTS_CAMERA
+	RTSCamera_PluginEnd();
+#endif
+
 #if defined RPG
 	RPG_PluginEnd();
 #endif
@@ -1736,6 +1745,9 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	Tutorial_MakeClientNotMove(client);
 
 	if(SkillTree_PlayerRunCmd(client, buttons, vel))
+		return Plugin_Changed;
+	
+	if(BetWar_PlayerRunCmd(client, buttons, vel))
 		return Plugin_Changed;
 #endif
 
@@ -3059,6 +3071,8 @@ public void CheckIfAloneOnServer()
 	}
 
 #if defined ZR 
+	if(BetWar_Mode())
+		return;
 	if (players < 4 && players > 0)
 	{
 		if (Bob_Exists)
@@ -3142,7 +3156,7 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 	{
 		SDKCall_SetSpeed(client);
 	}
-	else if (condition == TFCond_Taunting && f_PreventMovementClient[client] > GetGameTime())
+	else if (condition == TFCond_Taunting && (BetWar_Mode() || f_PreventMovementClient[client] > GetGameTime()))
 	{
 		TF2_RemoveCondition(client, TFCond_Taunting);
 	}

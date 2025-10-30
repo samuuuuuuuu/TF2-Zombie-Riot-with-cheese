@@ -3028,6 +3028,12 @@ void Store_Menu(int client)
 	}
 	else if(StoreItems && !IsVoteInProgress() && !Waves_CallVote(client))
 	{
+		if(BetWar_Mode())
+		{
+			RTSCamera_ShowMenu(client, 0);
+			return;
+		}
+
 		NPCOnly[client] = 0;
 		
 		if(ClientTutorialStep(client) == 1)
@@ -3078,7 +3084,7 @@ void Store_OpenGiftStore(int client, int entity, int price, bool barney)
 	}
 }*/
 
-void CheckClientLateJoin(int client, bool RespawnClient = false)
+void CheckClientLateJoin(int client, bool RespawnClient = true)
 {
 	if(b_AntiLateSpawn_Allow[client])
 		return;
